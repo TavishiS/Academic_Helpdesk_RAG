@@ -126,12 +126,13 @@ make ingest            # 4. build the vector index from your documents
 make chat single_agent # 5. chat with the single-agent helpdesk
 make chat multi_agent  #    chat with the multi-agent helpdesk
 ```
-Run `make` or `make help` to see every command.
+Run `make` or `make help` to see every command, variant and option, plus your current settings.
 
 | Command | What it does |
 |---|---|
 | `make venv` | creates `.venv/` if it doesn't exist, checks every package in `requirements.txt` and installs only those that are missing or outdated, then creates `.env` from `.env.example` |
 | `make venv TORCH=cpu` | same, but installs the much smaller CPU-only PyTorch (laptops without an NVIDIA GPU) |
+| `make torch-cpu` | installs the CPU-only PyTorch on its own, or replaces an installed GPU (CUDA) build with it and removes the CUDA packages |
 | `make doctor` | checks the Ollama server, the LLM model, the number of KB files and indexed chunks, and prints the active settings |
 | `make pull-model` | `ollama pull` of the model in `.env` (or `MODEL=qwen3:8b`) |
 | `make ingest` | load → chunk → embed → store the files in `KB_DIR` |
@@ -140,6 +141,7 @@ Run `make` or `make help` to see every command.
 | `make smoke-test` | ingest the sample data, test retrieval, test every tool, then ask 5 questions to both architectures (`make smoke-test multi_agent` for one only) |
 | `make eval single_agent` / `make eval multi_agent` | evaluation (options: `RUNS=3`, `MODEL=qwen3:8b`, `IDS=P01,S01`) |
 | `make eval-all` | evaluates both architectures |
+| `make benchmark` | times one question on both architectures and counts LLM calls and prompt tokens (`single_agent`, `LABEL=...`); rows go to `results/benchmark.csv` |
 | `make unanswered` | shows the logged questions that need a human answer |
 | `make clean` | deletes the vector indexes and caches (documents, logs and results are kept) |
 

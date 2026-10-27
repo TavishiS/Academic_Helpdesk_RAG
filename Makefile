@@ -30,23 +30,73 @@ MODE  := $(if $(filter single_agent,$(AGENT)),single,multi)
 CFG = $(shell $(PY) -c "import config; print(config.$(1))" 2>/dev/null)
 
 .DEFAULT_GOAL := help
-.PHONY: help venv env doctor pull-model ingest chat ask smoke-test eval eval-all benchmark unanswered clean single_agent multi_agent
+.PHONY: help venv torch-cpu env doctor pull-model ingest chat ask smoke-test eval eval-all benchmark unanswered clean single_agent multi_agent
 
-help: ## show this help
-	@echo "Academic Helpdesk: available commands"
-	@echo
-	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  make %-26s %s\n", $$1, $$2}'
-	@echo
-	@echo "Examples:"
-	@echo "  make venv                         (first time; add TORCH=cpu on a laptop without NVIDIA GPU)"
-	@echo "  make venv TORCH=cpu               (add TORCH=cpu on a laptop without NVIDIA GPU)"
-	@echo "  make smoke-test"
-	@echo "  make ingest"
-	@echo "  make chat single_agent"
-	@echo "  make chat multi_agent TRACE=1     (also show the tool calls)"
-	@echo "  make ask Q=\"What is the slot for Autonomous Systems?\""
-	@echo "  make eval single_agent RUNS=3"
-	@echo "  make eval multi_agent MODEL=qwen3:8b"
+# every command, variant and option; keep this in sync when adding a target
+define HELP_TEXT
+Academic Helpdesk: all make commands
+(single_agent / multi_agent picks the architecture; when it is left out, multi_agent is used)
+
+SETUP
+  make venv                              create .venv (if missing), install ONLY missing/outdated requirements, create .env
+  make venv TORCH=cpu                    same, but install the small CPU-only PyTorch if torch is not installed yet
+  make torch-cpu                         install the CPU-only PyTorch, or replace a GPU (CUDA) build with it (frees GBs)
+  make env                               create .env from .env.example (never overwrites an existing .env)
+  make doctor                            check Ollama, the LLM model, knowledge base files and index; show settings
+  make pull-model                        download the LLM named in .env with Ollama
+  make pull-model MODEL=qwen3:8b         download another LLM (needed before using MODEL=... below)
+
+KNOWLEDGE BASE
+  make ingest                            (re)build the vector index from KB_DIR: load -> chunk -> embed -> ChromaDB
+
+USE THE HELPDESK
+  make chat single_agent                 interactive chat with the single agent ('new' = fresh session, 'exit' = quit)
+  make chat multi_agent                  interactive chat with orchestrator + policy/schedule/email agents
+  make chat multi_agent TRACE=1          ... and print every tool call
+  make chat single_agent MODEL=qwen3:8b  ... with another LLM
+  make ask Q="your question"             ask one question (multi_agent), tool calls are shown
+  make ask Q="your question" single_agent
+  make unanswered                        show the questions that were logged for a human to answer
+
+TESTING AND EVALUATION
+  make smoke-test                        end-to-end test on the DUMMY data/sample, both architectures
+  make smoke-test single_agent           ... only one architecture (faster); same for multi_agent
+  make eval single_agent                 evaluate on evaluation/questions.json (default RUNS=3)
+  make eval multi_agent RUNS=5           ... with a different number of runs per question
+  make eval multi_agent MODEL=qwen3:8b   ... with another LLM (model comparison)
+  make eval multi_agent IDS=P01,S01,O01  ... only some questions (quick check)
+  make eval-all                          evaluate single_agent, then multi_agent (accepts RUNS= and MODEL=)
+  make benchmark                         time one question on both architectures + count LLM tokens
+  make benchmark single_agent LABEL=x    ... one architecture, rows labelled 'x' in results/benchmark.csv
+
+HOUSEKEEPING
+  make clean                             delete vector indexes and caches (documents, logs and results are kept)
+  make help  (or just: make)             show this list
+
+OPTIONS (add to any command above)
+  MODEL=<ollama model>                   LLM to use for this run (chat, ask, eval, eval-all, pull-model)
+  TRACE=1                                show the tool calls (chat)
+  RUNS=<n>                               runs per question (eval, eval-all; default 3)
+  IDS=a,b,c                              only these question IDs (eval)
+  LABEL=<text>                           label of the rows written by benchmark
+  TORCH=cpu                              CPU-only PyTorch (venv)
+  <any .env setting>=<value>             override it for one run, e.g. TOP_K=5 make chat multi_agent
+endef
+export HELP_TEXT
+
+help: ## show every command
+	@w=$$(tput cols 2>/dev/null || echo $${COLUMNS:-100}); [ "$$w" -lt 60 ] && w=60; \
+	{ \
+		echo "$$HELP_TEXT"; \
+		if [ -x $(PY) ]; then \
+			echo; \
+			echo "CURRENT SETTINGS (.env)"; \
+			echo "  KB_DIR=$(call CFG,KB_DIR)"; \
+			echo "  LLM_MODEL=$(call CFG,LLM_MODEL)  TOP_K=$(call CFG,TOP_K)  CHUNK_SIZE=$(call CFG,CHUNK_SIZE)  MIN_SIMILARITY=$(call CFG,MIN_SIMILARITY)"; \
+		else \
+			echo; echo "No virtual environment yet: start with 'make venv'."; \
+		fi; \
+	} | awk -v width=$$w -f scripts/format_help.awk
 
 # ------------------------------------------------------------------ setup
 
@@ -62,6 +112,26 @@ venv: ## create .venv and install only the missing requirements
 	@$(MAKE) --no-print-directory env
 	@echo
 	@echo "==> Setup complete. Next: 'make doctor' to check Ollama, then 'make smoke-test'."
+
+torch-cpu: _need-venv ## install the CPU-only PyTorch (or replace a CUDA build with it)
+	@v=$$($(PY) -c "import torch; print(torch.__version__)" 2>/dev/null); \
+	if [[ "$$v" == *+cpu ]]; then \
+		echo "==> PyTorch $$v is already the CPU-only build, nothing to do."; exit 0; \
+	fi; \
+	if [ -n "$$v" ]; then \
+		echo "==> Found PyTorch $$v (GPU/CUDA build): replacing it with the CPU-only build"; \
+		flags="--force-reinstall --no-deps"; \
+	else \
+		echo "==> PyTorch is not installed: installing the CPU-only build"; flags=""; \
+	fi; \
+	echo "    (sentence-transformers runs the embedding model on PyTorch; Ollama does not use it)"; \
+	$(PY) -m pip install $$flags torch --index-url https://download.pytorch.org/whl/cpu || exit 1; \
+	gpu=$$($(PY) -m pip list 2>/dev/null | awk '/^(nvidia-|triton)/ {print $$1}'); \
+	if [ -n "$$gpu" ]; then \
+		echo "==> Removing CUDA-only packages the CPU build does not need: $$gpu"; \
+		$(PY) -m pip uninstall -y $$gpu; \
+	fi; \
+	echo "==> Done: $$($(PY) -c 'import torch; print("PyTorch", torch.__version__)')"
 
 env: ## create .env from .env.example (if it does not exist)
 	@if [ -f .env ]; then \
