@@ -7,10 +7,8 @@ Run with:  python main.py ingest
 import re
 from pathlib import Path
 
-import pandas as pd
-
 import config
-from helpdesk import retriever
+from helpdesk import csv_store, retriever
 
 
 # ------------------------------------------------------------------ loaders
@@ -30,19 +28,49 @@ def load_txt(path):
     yield path.read_text(encoding="utf-8", errors="replace"), {}
 
 
+# labels used when a course record is written out as text for embedding
+_RECORD_LABELS = {
+    "course_code": "Course Code", "course_name": "Course Name", "department": "Department",
+    "instructor": "Instructor", "slot": "Slot", "timings": "Class timings", "lab_slot": "Lab Slot",
+    "credits": "Credits", "ltp": "L-T-P", "course_type": "Course Type", "program": "Program",
+    "year": "Year", "section": "Section", "remarks": "Remarks",
+}
+
+
+def _csv_lines(path):
+    """One line of text per table row. Timetables are read with csv_store's parser (the same one
+    the lookup tools use), so messy exports with section titles and repeated headers come out clean."""
+    records = csv_store.parse_course_table(path)
+    if records:
+        lines = []
+        for r in csv_store.merge_records(records):
+            r = dict(r, timings=csv_store.timings_for(f"{r.get('slot', '')} {r.get('lab_slot', '')}"))
+            lines.append(" | ".join(f"{label}: {r[k]}" for k, label in _RECORD_LABELS.items() if r.get(k)))
+        return lines
+
+    rows = [row for row in csv_store._read_rows(path) if any(row)]
+    grid = csv_store.parse_slot_grid(path)
+    if grid:
+        # a weekly slot grid: "Slot E: Tue 11:00-11:50, ..." is what a student asks about;
+        # the raw rows (notes, slot allocation rules) are added as plain text
+        return ([f"Slot {s}: {', '.join(t)}" for s, t in grid.items()]
+                + [" | ".join(c for c in row if c) for row in rows])
+
+    # any other table (e.g. faculty contacts): 'column: value' pairs under the first header row
+    header, lines = rows[0] if rows else [], []
+    for row in rows[1:]:
+        lines.append(" | ".join(f"{header[i]}: {c}" if i < len(header) and header[i] else c
+                                for i, c in enumerate(row) if c))
+    return lines
+
+
 def load_csv(path):
     """
-    A CSV row like (CSL7570, Autonomous Systems, B) is meaningless to an embedding
-    model on its own, so every row is written as 'column: value' pairs and a few
+    A CSV row like (CSL7650, Autonomous Systems, E) is meaningless to an embedding
+    model on its own, so every row is written as 'column: value' text and a few
     rows are grouped into one chunk.
     """
-    df = pd.read_csv(path, dtype=str, keep_default_na=False, encoding_errors="replace")
-    df.columns = [str(c).strip() for c in df.columns]
-    lines = []
-    for _, row in df.iterrows():
-        pairs = [f"{col}: {str(val).strip()}" for col, val in row.items() if str(val).strip()]
-        lines.append(" | ".join(pairs))
-
+    lines = _csv_lines(path)
     n = config.CSV_ROWS_PER_CHUNK
     for start in range(0, len(lines), n):
         block = lines[start:start + n]

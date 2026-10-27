@@ -43,30 +43,61 @@ def search_documents(query: str) -> dict:
     } for h in relevant]}
 
 
+# fields of a course shown to the LLM (in this order); empty ones are left out to keep prompts short
+_COURSE_FIELDS = ["course_code", "course_name", "department", "instructor", "slot", "timings", "lab_slot",
+                  "credits", "ltp", "course_type", "program", "year", "section", "remarks", "source"]
+
+
+def _course_view(row):
+    row = dict(row)
+    row["timings"] = csv_store.timings_for(f"{row.get('slot', '')} {row.get('lab_slot', '')}")
+    return {k: row[k] for k in _COURSE_FIELDS if row.get(k)}
+
+
+def _course_label(row):
+    return f"{row.get('course_code', '')} {row.get('course_name', '')}".strip()
+
+
 def lookup_course(course: str) -> dict:
-    """Get the slot, instructor, credits etc. of a course from the timetable.
+    """Get the slot, class timings, instructor, credits etc. of a course from the timetable.
+    Also gives the timings of a slot: use e.g. "slot D".
 
     Args:
-        course: course code (e.g. "CSL7570") or course name.
+        course: course code (e.g. "CSL7650"), course name, abbreviation (e.g. "DSA"), or "slot D".
     """
+    if csv_store.is_department(course):
+        return {"error": f"'{course}' is a department, not a course. "
+                         f"Use list_courses to list the courses of a department."}
+    slot = csv_store.slot_query(course)
+    if slot:
+        return {"slot": slot, "timings": csv_store.timings_for(slot), "source": csv_store.slot_grid_files()}
     matches = csv_store.find_course(course)
     if not matches:
         return {"matches": [], "error": f"No course matching '{course}' in the timetable files."}
-    return {"matches": matches[:5]}
+    return {"matches": [_course_view(m) for m in matches[:5]]}
 
 
-def count_courses(department: str, level: str, course_type: str) -> dict:
-    """Count the courses offered this semester. Use "" for a filter that is not needed.
+def list_courses(department: str, level: str, course_type: str) -> dict:
+    """List or count the courses offered this semester, with instructor and slot.
+    Use "" for a filter that is not needed. The list is shown to the student automatically.
 
     Args:
-        department: e.g. "Humanities", "CSE", or "".
+        department: e.g. "CSE", "Electrical", "Mechanical", "Civil", or "".
         level: e.g. "400", or "".
         course_type: e.g. "elective", "core", or "".
     """
+    if department.strip() and not csv_store.has_department(department):
+        return {"error": f"There is no timetable data for the department '{department}'.",
+                "available_departments": csv_store.departments()}
     rows = csv_store.count_courses(department, level, course_type)
+    # one short line per course: the LLM reads these on every call, so no timings/credits here
+    lines = [" | ".join(x for x in [_course_label(r), r.get("instructor", ""),
+                                    f"slot {r['slot']}" if r.get("slot") else ""] if x) for r in rows]
     return {
+        # a ready-made sentence: small models misread a bare {"count": 2} surprisingly often
+        "summary": f"{len(rows)} course(s) match.",
         "count": len(rows),
-        "courses": [f"{r.get('course_code')} {r.get('course_name', '')}".strip() for r in rows],
+        "rows": lines,
         "source": sorted({r["source"] for r in rows}),
     }
 
@@ -75,44 +106,57 @@ def lookup_instructor_email(course_code: str) -> dict:
     """Get the instructor's name and email ID for a course.
 
     Args:
-        course_code: course code (e.g. "CSL7570") or course name.
+        course_code: course code (e.g. "CSL7650"), course name or abbreviation.
     """
     matches = csv_store.find_course(course_code)
     if not matches:
         return {"error": f"Course '{course_code}' not found in the timetable files."}
-    course = matches[0]
-    instructor = course.get("instructor", "")
-    sources = [course["source"]]
+    # prefer a row that names a person (some rows say "TBD" or "ELECTRONICS Dept.")
+    course = next((m for m in matches if csv_store.split_people(m.get("instructor", ""))), matches[0])
+    people = csv_store.split_people(course.get("instructor", ""))
+    result = {"course": _course_label(course), "instructor": course.get("instructor") or "unknown"}
+    others = sorted({f"{_course_label(m)} ({m.get('instructor', '?')})" for m in matches
+                     if _course_label(m) != result["course"]})
+    if others:
+        result["other_matching_courses"] = others[:5]
 
-    email = course.get("email", "")  # some timetables already contain the email
-    if not email and instructor:
-        # a course can have several instructors: "Dr. A, Dr. B" -> take the first one found
-        for name in [n for n in instructor.replace(" and ", ",").split(",") if n.strip()]:
-            found = csv_store.find_email(name)
-            if found:
-                email = found[0]["email"]
-                sources.append(found[0]["source"])
-                break
+    sources, found, missing = {course["source"]}, [], []
+    if course.get("email"):                       # some timetables already contain the email
+        found = [{"name": course.get("instructor", ""), "email": course["email"]}]
+    else:
+        for person in people:                     # a course can have several instructors
+            hit = csv_store.find_email(person)
+            if hit:
+                found.append(hit[0])
+                sources.add(hit[0]["source"])
+            else:
+                missing.append(person)
+    result["source"] = sorted(sources)
 
-    if not email:
-        return {"course": course.get("course_code"), "instructor": instructor or "unknown",
-                "error": "Email ID of the instructor not found in the faculty directory.", "source": sources}
-    return {"course": f"{course.get('course_code')} {course.get('course_name', '')}".strip(),
-            "instructor": instructor, "email": email, "source": sources}
+    if not found:
+        result["error"] = ("The timetable does not name the instructor." if not people
+                           else "Email ID of the instructor not found in the faculty directory.")
+        return result
+    result["instructor"] = ", ".join(h["name"] for h in found)
+    result["email"] = ", ".join(h["email"] for h in found)
+    if missing:
+        result["note"] = f"No email ID found for: {', '.join(missing)}"
+    return result
 
 
 def draft_email(course_code: str, request_type: str, reason: str, dates: str) -> dict:
     """Draft (not send) an email to the instructor of a course. The email ID is filled in automatically.
 
     Args:
-        course_code: course code or name, e.g. "CSL7570".
+        course_code: course code or name, e.g. "CSL7650".
         request_type: "leave" or "makeup" (makeup exam).
         reason: e.g. "fever", or "".
         dates: e.g. "2 days", "24-25 Oct", or "".
     """
     info = lookup_instructor_email(course_code)
     to = info.get("email", "[instructor email not found - please add]")
-    instructor = info.get("instructor") or "Sir/Madam"
+    names = csv_store.split_people(info.get("instructor", "")) if info.get("email") else []
+    greeting = " and ".join(f"Prof. {n}" for n in names) or "Sir/Madam"
     course = info.get("course") or course_code
     reason = reason.strip() or "[reason]"
     dates = dates.strip() or "[dates]"
@@ -128,7 +172,7 @@ def draft_email(course_code: str, request_type: str, reason: str, dates: str) ->
                f"for {dates} due to {reason}. I kindly request you to grant me leave for this period. "
                f"I will make up for the missed content and can share supporting documents if needed.")
 
-    body = (f"Dear {instructor},\n\n{ask}\n\nThank you for your consideration.\n\n"
+    body = (f"Dear {greeting},\n\n{ask}\n\nThank you for your consideration.\n\n"
             f"Regards,\n[Your Name]\n[Roll Number]\n[Program, Year]")
     return {"to": to, "subject": subject, "body": body, "status": "DRAFT - not sent",
             "source": info.get("source", [])}

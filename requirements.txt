@@ -7,3 +7,11 @@ pandas>=2.0.0
 python-dotenv>=1.0.0
 # litellm >=1.10x imports `mcp` on every completion call but does not declare it as a dependency
 mcp>=1.0.0
+# OCR support for scanned PDFs (image-only PDFs with no text layer).
+# NOTE: also requires the 'tesseract-ocr' *system* package:
+#   sudo apt install tesseract-ocr        (Debian/Ubuntu)
+#   brew install tesseract                (macOS)
+# After installing tesseract, re-run OCR on any scanned PDFs:
+#   ocrmypdf <input.pdf> <input.pdf>      (overwrites with a searchable copy)
+# then re-ingest:  python main.py ingest
+ocrmypdf>=16.0.0

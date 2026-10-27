@@ -30,7 +30,7 @@ MODE  := $(if $(filter single_agent,$(AGENT)),single,multi)
 CFG = $(shell $(PY) -c "import config; print(config.$(1))" 2>/dev/null)
 
 .DEFAULT_GOAL := help
-.PHONY: help venv torch-cpu env doctor pull-model ingest chat ask smoke-test eval eval-all benchmark unanswered clean single_agent multi_agent
+.PHONY: help venv torch-cpu env doctor pull-model ocr ingest faculty-contacts chat ask smoke-test eval eval-all benchmark unanswered clean single_agent multi_agent
 
 # every command, variant and option; keep this in sync when adding a target
 define HELP_TEXT
@@ -47,12 +47,14 @@ SETUP
   make pull-model MODEL=qwen3:8b         download another LLM (needed before using MODEL=... below)
 
 KNOWLEDGE BASE
+  make ocr                               add a text layer to scanned (image-only) PDFs in KB_DIR (needs tesseract-ocr)
   make ingest                            (re)build the vector index from KB_DIR: load -> chunk -> embed -> ChromaDB
+  make faculty-contacts                  rebuild faculty_contacts.csv from the instructors in the course CSVs (fake emails/phones), then run make ingest
 
 USE THE HELPDESK
   make chat single_agent                 interactive chat with the single agent ('new' = fresh session, 'exit' = quit)
   make chat multi_agent                  interactive chat with orchestrator + policy/schedule/email agents
-  make chat multi_agent TRACE=1          ... and print every tool call
+  make chat multi_agent TRACE=1          ... and print every tool call (or type 'trace on' in the chat)
   make chat single_agent MODEL=qwen3:8b  ... with another LLM
   make ask Q="your question"             ask one question (multi_agent), tool calls are shown
   make ask Q="your question" single_agent
@@ -157,6 +159,27 @@ pull-model: _need-venv ## download the LLM from .env (or MODEL=...) with Ollama
 
 # ------------------------------------------------------------------ RAG index
 
+ocr: _need-venv ## add a text layer to all scanned (image-only) PDFs in KB_DIR using ocrmypdf
+	@echo "==> Running OCR on scanned PDFs in $(call CFG,KB_DIR)"
+	@echo "    NOTE: requires 'tesseract-ocr' system package:"
+	@echo "      sudo apt install tesseract-ocr   (Debian/Ubuntu)"
+	@echo "      brew install tesseract           (macOS)"
+	@failed=0; \
+	for pdf in $(call CFG,KB_DIR)/*.pdf; do \
+		[ -f "$$pdf" ] || continue; \
+		chars=$$($(PY) -c "from pypdf import PdfReader; r=PdfReader('$$pdf'); print(sum(len(p.extract_text() or '') for p in r.pages))" 2>/dev/null); \
+		if [ "$$chars" -eq 0 ] 2>/dev/null; then \
+			echo "    OCR: $$pdf (0 chars extracted → scanned PDF)"; \
+			$(PY) -m ocrmypdf --skip-text "$$pdf" "$$pdf" && echo "       ✓ done" || { echo "       ✘ failed"; failed=1; }; \
+		else \
+			echo "    skip: $$pdf ($$chars chars already extractable)"; \
+		fi; \
+	done; \
+	if [ "$$failed" -eq 1 ]; then \
+		echo "==> Some files failed. Is tesseract installed? (sudo apt install tesseract-ocr)"; exit 1; \
+	fi
+	@echo "==> OCR done. Run 'make ingest' to rebuild the vector index."
+
 ingest: _need-venv ## (re)build the vector index from KB_DIR (.env)
 	@echo "==> Building the vector index"
 	@echo "    knowledge base : $(call CFG,KB_DIR)"
@@ -165,13 +188,19 @@ ingest: _need-venv ## (re)build the vector index from KB_DIR (.env)
 	@echo "    steps          : load pdf/txt/csv -> chunk ($(call CFG,CHUNK_SIZE) chars, $(call CFG,CHUNK_OVERLAP) overlap) -> embed -> store"
 	@$(PY) main.py ingest
 
+faculty-contacts: _need-venv ## rebuild faculty_contacts.csv from the course CSVs
+	@echo "==> Rebuilding faculty_contacts.csv from the instructors in the course CSVs of $(call CFG,KB_DIR)"
+	@echo "    emails (@iitj.example) and phone numbers (starting 2-5) are FAKE; same name -> same details"
+	@$(PY) scripts/build_faculty_contacts.py
+	@echo "    run 'make ingest' so that the search index also has the new contacts"
+
 # ------------------------------------------------------------------ using the agent
 
 chat: _need-venv ## chat: make chat single_agent | make chat multi_agent
 	@$(PY) scripts/preflight.py >/dev/null || { $(PY) scripts/preflight.py; echo; echo "✘ Fix the issues above first."; exit 1; }
 	@echo "==> Starting the $(MODE)-agent helpdesk (model: $(if $(MODEL),$(MODEL),$(call CFG,LLM_MODEL)))"
 	@echo "    $(if $(filter single,$(MODE)),one agent with all tools,orchestrator -> policy_agent / schedule_agent / email_agent)"
-	@echo "    type 'new' for a fresh session, 'exit' to quit$(if $(TRACE),, | add TRACE=1 to see tool calls)"
+	@echo "    type 'new' for a fresh session, 'trace on' / 'trace off' to show tool calls, 'exit' to quit"
 	@$(PY) main.py chat --mode $(MODE) $(MODEL_FLAG) $(TRACE_FLAG)
 
 ask: _need-venv ## ask one question: make ask Q="..." [single_agent|multi_agent]

@@ -61,11 +61,14 @@ def test_tools():
     from helpdesk import tools
     r = tools.lookup_course("Autonomous Systems")
     check("lookup_course('Autonomous Systems') -> slot D", bool(r["matches"]) and r["matches"][0].get("slot") == "D")
-    r = tools.count_courses("Humanities", "400", "elective")
-    check("count_courses('Humanities', '400', 'elective') -> 2", r["count"] == 2, f"got {r['count']}: {r['courses']}")
-    r = tools.count_courses("Humanities department", "400 level", "electives")
-    check("count_courses('Humanities department', '400 level', 'electives') -> 2 (LLM-style wording)",
+    r = tools.list_courses("Humanities", "400", "elective")
+    check("list_courses('Humanities', '400', 'elective') -> 2", r["count"] == 2, f"got {r['count']}: {r['summary']}")
+    r = tools.list_courses("Humanities department", "400 level", "electives")
+    check("list_courses('Humanities department', '400 level', 'electives') -> 2 (LLM-style wording)",
           r["count"] == 2, f"got {r['count']}")
+    r = tools.lookup_course("DSA")
+    check("lookup_course('DSA') -> CSL2010 (abbreviation)",
+          bool(r["matches"]) and r["matches"][0].get("course_code") == "CSL2010")
     r = tools.lookup_instructor_email("CSL7570")
     check("lookup_instructor_email('CSL7570') -> dummy.sharma@example.edu", r.get("email") == "dummy.sharma@example.edu")
     r = tools.draft_email("CSL7570", "leave", "fever", "2 days")

@@ -32,6 +32,22 @@ RESULTS_DIR = ROOT / "results"
 
 SUPPORTED_EXTENSIONS = {".pdf", ".txt", ".csv"}
 
+# Department of a course CSV that has no "Department" column, by file name (without .csv).
+# Files not listed here get their file name as department ("physics.csv" -> "Physics").
+DEPARTMENT_BY_FILE = {
+    "cse": "Computer Science and Engineering",
+    "electrical": "Electrical Engineering",
+    "mechanical": "Mechanical Engineering",
+    "civil": "Civil and Infrastructure Engineering",
+}
+# Other names students use for a department (initials such as "CSE", "EE", "ME" work automatically)
+DEPARTMENT_ALIASES = {
+    "Computer Science and Engineering": ["cs", "computer science", "computer"],
+    "Electrical Engineering": ["eee", "electrical"],
+    "Mechanical Engineering": ["mech", "mechanical"],
+    "Civil and Infrastructure Engineering": ["ce", "civil"],
+}
+
 # ---------------- Embeddings / Vector store ----------------
 EMBED_MODEL = os.getenv("EMBED_MODEL", "BAAI/bge-small-en-v1.5")
 # bge models are trained with this instruction prepended to *queries only* (not to passages)

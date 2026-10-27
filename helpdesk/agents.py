@@ -13,7 +13,7 @@ from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 
 import config
-from helpdesk.tools import (count_courses, draft_email, log_unanswered_question, lookup_course,
+from helpdesk.tools import (draft_email, list_courses, log_unanswered_question, lookup_course,
                             lookup_instructor_email, search_documents)
 
 # Rules shared by every agent. Small models follow short, numbered, imperative rules best.
@@ -21,9 +21,11 @@ GROUNDING_RULES = f"""
 RULES:
 1. Use ONLY facts from tool results. Never guess numbers, slots, names or email IDs.
 2. Call a tool before answering.
-3. End a factual answer with "Source: <file name>", copying the "cite_as" (or "source") value of the
-   tool result exactly, e.g. "Source: timetable.csv". It is a FILE name, never a tool name; never add pages yourself.
-4. If the tools find nothing, or the question is not academic, call log_unanswered_question and reply exactly:
+3. First write the answer as a full sentence with the facts (e.g. the number, slot or rule). Then, on a new line,
+   "Source: <file name>", copying the "cite_as" (or "source") value of the tool result exactly,
+   e.g. "Source: timetable.csv". It is a FILE name, never a tool name; never add pages yourself.
+4. Refuse ONLY if the question is not academic, or the tool result is empty or has an "error". A count or a
+   course row IS an answer. To refuse: call log_unanswered_question and reply exactly:
    "{config.REFUSAL_TEXT}" (nothing else, no source).
 5. Be brief.
 """
@@ -52,12 +54,13 @@ def build_single_agent(model_name=None):
         description="Academic helpdesk.",
         instruction=f"""You are the institute's Academic Helpdesk. Pick the tool:
 - rules, attendance, grading, credits, degree requirements, curriculum, office orders: search_documents
-- slot / instructor / credits of a course: lookup_course
-- "how many courses/electives": count_courses
+- slot, class timings, instructor or credits of a course, or timings of a slot ("slot D"): lookup_course
+- list or count courses ("list CSE courses", "how many electives"): list_courses; the list is shown to
+  the student automatically, so just reply with one sentence giving the number of courses
 - instructor email ID: lookup_instructor_email
 - {EMAIL_RULE}
 {GROUNDING_RULES}""",
-        tools=[search_documents, lookup_course, count_courses, lookup_instructor_email,
+        tools=[search_documents, lookup_course, list_courses, lookup_instructor_email,
                draft_email, log_unanswered_question],
     )
 
@@ -72,7 +75,7 @@ def build_multi_agent(model_name=None):
         name="policy_agent",
         model=model,
         description="Academic rules and regulations: attendance, grading, exams, credit and degree requirements, "
-                    "curriculum. Not for timetable questions or counting courses.",
+                    "curriculum. Not for timetable questions or listing/counting courses.",
         instruction=f"""You answer questions on academic rules, programs and curriculum.
 Call search_documents (search again with other words if the results don't answer it).
 {GROUNDING_RULES}""",
@@ -83,14 +86,15 @@ Call search_documents (search again with other words if the results don't answer
     schedule_agent = Agent(
         name="schedule_agent",
         model=model,
-        description="Timetable and courses offered this semester: course slots, instructor of a course, "
-                    "exam dates, and every 'how many courses/electives' question.",
+        description="Timetable and courses offered this semester: course slots and class timings, instructor of a course, "
+                    "exam dates, listing the courses of a department, and every 'how many courses/electives' question.",
         instruction=f"""You answer timetable questions.
-- slot / instructor / credits of a course: lookup_course
-- "how many ...": count_courses ("" for filters not mentioned)
+- slot, class timings, instructor or credits of a course, or timings of a slot ("slot D"): lookup_course
+- list or count courses ("list CSE courses", "how many electives"): list_courses ("" for filters not
+  mentioned); the list is shown to the student automatically, so reply with one sentence giving the number
 - exam dates, academic calendar: search_documents
 {GROUNDING_RULES}""",
-        tools=[lookup_course, count_courses, search_documents, log_unanswered_question],
+        tools=[lookup_course, list_courses, search_documents, log_unanswered_question],
         disallow_transfer_to_peers=True,
     )
 

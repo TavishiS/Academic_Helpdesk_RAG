@@ -66,9 +66,14 @@ def cited_files(answer, kb_files):
 
 
 def keyword_hit(answer, keywords):
-    # every keyword must appear; "a|b" means either a or b is fine
-    text = answer.lower()
-    return all(any(alt.strip().lower() in text for alt in kw.split("|")) for kw in keywords)
+    """Every keyword must appear (case-insensitive). "a|b" means either a or b is fine.
+    "re:<regex>" is a regular expression, for short answers where a substring would match
+    anything, e.g. "re:\\bE\\b" for slot E or "re:\\b5\\b" for a count of 5."""
+    def hit(kw):
+        if kw.startswith("re:"):
+            return re.search(kw[3:], answer, re.I) is not None
+        return any(alt.strip().lower() in answer.lower() for alt in kw.split("|"))
+    return all(hit(kw) for kw in keywords)
 
 
 def score(q, ans, kb_files):

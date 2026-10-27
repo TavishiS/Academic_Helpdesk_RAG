@@ -3,6 +3,7 @@ Thin wrapper around ADK's Runner so the CLI and the evaluation script
 can ask a question and get back the answer *plus* a trace of what happened
 (which agent answered, which tools were called, what they returned).
 """
+import re
 import uuid
 from dataclasses import dataclass, field
 
@@ -12,6 +13,9 @@ from google.genai import types
 
 import config
 from helpdesk.agents import build_agent
+from helpdesk.tools import log_unanswered_question
+
+REFUSAL_RE = re.compile(r"\s*I (don't|do not) know\b", re.I)
 
 
 @dataclass
@@ -37,14 +41,34 @@ class Answer:
         return None
 
     @property
+    def course_list(self):
+        """The rows of the last list_courses result, if any."""
+        for r in reversed(self.tool_results):
+            if r["name"] == "list_courses" and isinstance(r["response"], dict) and r["response"].get("rows"):
+                return r["response"]["rows"]
+        return None
+
+    @property
     def full_text(self):
-        """Answer as shown to the student: the LLM's reply plus the email draft, printed verbatim
-        from the tool result (so the email ID and wording can never be altered by the LLM)."""
+        """Answer as shown to the student: the LLM's reply plus the email draft / course list, printed
+        verbatim from the tool result. The LLM cannot alter an email ID this way, and it does not have
+        to retype a 50-line list at ~6 tokens/s."""
+        text = self.text
+        rows = self.course_list
+        if rows and text != config.REFUSAL_TEXT:
+            # The LLM sometimes retypes part of the list or puts "Source:" first. Keep only its first
+            # sentence; the list and the source line come from the tool result.
+            lines = [l.strip() for l in text.splitlines() if l.strip() and not l.strip().lower().startswith("source")]
+            intro = re.split(r"(?<=[.!?:])\s", lines[0])[0] if lines else f"{len(rows)} course(s) match."
+            sources = next((r["response"].get("source") for r in reversed(self.tool_results)
+                            if r["name"] == "list_courses" and isinstance(r["response"], dict)), None)
+            text = (intro.rstrip(".:") + ":\n\n" + "\n".join(f"{i:>3}. {row}" for i, row in enumerate(rows, 1))
+                    + (f"\n\nSource: {', '.join(sources)}" if sources else ""))
         d = self.email_draft
-        if not d:
-            return self.text
-        return (f"{self.text}\n\n----- EMAIL DRAFT ({d.get('status', 'not sent')}) -----\n"
-                f"To: {d.get('to')}\nSubject: {d.get('subject')}\n\n{d.get('body')}\n" + "-" * 40)
+        if d:
+            text += (f"\n\n----- EMAIL DRAFT ({d.get('status', 'not sent')}) -----\n"
+                     f"To: {d.get('to')}\nSubject: {d.get('subject')}\n\n{d.get('body')}\n" + "-" * 40)
+        return text
 
 
 class Helpdesk:
@@ -83,6 +107,22 @@ class Helpdesk:
                 text = "".join(p.text or "" for p in event.content.parts).strip()
                 if text:
                     ans.text, ans.agent = text, event.author
+        # Guard for small models: sometimes the reply is only the citation line ("Source: x.csv") and the
+        # fact itself is missing. Then the tool's ready-made summary sentence is put in front of it.
+        if re.fullmatch(r"\s*Source:[^\n]*\s*", ans.text):
+            summary = next((r["response"]["summary"] for r in reversed(ans.tool_results)
+                            if isinstance(r["response"], dict) and r["response"].get("summary")), None)
+            if summary:
+                ans.text = f"{summary}\n{ans.text.strip()}"
+        # Refusals are enforced by the program, not left to the LLM: an 8B model sometimes refuses
+        # without logging the question, or adds an invented source / "(Note: ...)" to the refusal.
+        if REFUSAL_RE.match(ans.text) or config.REFUSAL_TEXT.lower() in ans.text.lower():
+            if "log_unanswered_question" not in ans.tools_used:
+                args = {"question": question, "reason": "refused by the agent (logged by the program)"}
+                ans.tool_calls.append({"name": "log_unanswered_question", "args": args})
+                ans.tool_results.append({"name": "log_unanswered_question",
+                                         "response": log_unanswered_question(**args)})
+            ans.text = config.REFUSAL_TEXT
         if not ans.text:
             ans.text = "(no answer produced)"
         return ans

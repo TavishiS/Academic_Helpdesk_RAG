@@ -21,7 +21,7 @@ Personal data (names, emails, roll numbers) was replaced with dummy values.
   Chunk size 600 chars, overlap 100, split on paragraph → sentence boundaries. The file name is prepended before embedding.
 - **Embeddings / store:** `BAAI/bge-small-en-v1.5` (384-dim, normalised, query instruction prefix), ChromaDB with cosine distance.
 - **Retrieval:** top-3 (passages capped at 700 chars); chunks below a cosine similarity of 0.50 are dropped, and if nothing is left the agent is told to refuse.
-- **Tools:** `search_documents`, `lookup_course`, `count_courses`, `lookup_instructor_email`, `draft_email`, `log_unanswered_question`.
+- **Tools:** `search_documents`, `lookup_course`, `list_courses`, `lookup_instructor_email`, `draft_email`, `log_unanswered_question`.
 - **Agents:** (diagram) orchestrator → policy_agent / schedule_agent / email_agent (ADK `sub_agents` + `transfer_to_agent`).
 - **LLM:** Llama 3.1 8B through Ollama (LiteLLM connector), temperature 0.2, num_ctx 8192.
 

@@ -5,3 +5,4 @@ chroma_db_sample/
 results/
 logs/*.csv
 .env
+doubts.txt

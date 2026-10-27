@@ -1,0 +1,65 @@
+COURSE CODE (CIL),COURSE NAME,CREDITS,COURSE INSTRUCTOR,CO-INSTRUCTORS,,COURSE TYPE,PROGRAM,SLOT,LAB. SLOT
+CIN2010,Introduction to Profession,1 (0-0-2),Falak Vats,,,NE,BTech (New),NG2,-
+CIL2110,Transportation Engineering-I,3 (3-0-0),Subham Jain,,,PC,BTech (New),A,-
+CIL2090,Structural Analysis,3 (3-0-0),P Ravi Prakash,,,PC,BTech (New),B,-
+CIP2020,"Civil Engineering Laboratory - II (Structural Analysis Lab, Hydraulics Engineering Lab, Soil Mechanics Lab)",3 (0-0-6),P Ravi Prakash,Saran Aadhar,Pradeep Kumar Dammala,PC,BTech (New),-,"M8, M2, ?"
+CIL2100,Soil Mechanics,4 (3-1-0),Pradeep Kumar Dammala,,,PC,BTech (New),C,-
+CIL2120,Engineering Hydrology,3 (3-0-0),Mayank Suman,,,PC,BTech (New),D,-
+CIL2130,Air Pollution and Solid Waste Management,3 (3-0-0),Amit Sharma,,,PC,BTech (New),E,-
+CIL3060,Advanced Structural Analysis,4 (3-0-2),Falak Vats,,,PC,BTech (Old),E,M1
+CIL3070,Water Resources Engineering,4 (3-0-2),Saran Aadhar,,,PC,BTech (Old),C,?
+CIL3080,Reinforced Concrete Design,4 (3-0-2),Tekcham Gishan Singh,,,PC,BTech (Old),D,?
+CIL3090,Smart Infrastructure Engineering,3 (3-0-0),P Ravi Prakash,,,PC,BTech (Old),A,-
+CIP3040,Geotechnical Engineering Lab.,1 (0-0-2),Sarath Chandra Reddy Nallala,,,PC,BTech (Old),-,M3
+CIL4010,Environmental Science,2 (2-0-0),Trishikhi Raychoudhury,Debanjan Guha Roy,,IS,BTech (Old),V,-
+CIL7530,AI/ML in Infrastructure Engineering,3 (3-0-0),Mayank Suman,,,PE,BTech (Old),I,-
+CIL4340,Steel Structure Design,4 (3-1-0),Amit Kumar Rathi,,,PE,BTech (Old),U,-
+CIL7390,Climate Change and Impact,3 (3-0-0),Amit Sharma,,,PE,BTech (Old),H,-
+CIL7390,Climate Change and Impact,3 (3-0-0),Amit Sharma,,,ME,MTech (Env2025),H,-
+CIL7390,Climate Change and Impact,3 (3-0-0),Amit Sharma,,,ME,MTech (Energy2025),H,-
+CIL7320,Air Pollution and Control,3 (3-0-0),Deepika Bhattu,,,PE,BTech (Old),J,-
+CIL7320,Air Pollution and Control,3 (3-0-0),Deepika Bhattu,,,DC,PhD (2025),J,-
+CIL7320,Air Pollution and Control,3 (3-0-0),Deepika Bhattu,,,MC,MTech (Env2025),J,-
+CIL7320,Air Pollution and Control,3 (3-0-0),Deepika Bhattu,,,MC,MTech-NIT (Env2025),J,-
+CIL7630,Finite Element Method,3 (3-0-0),Shuvajit Mukherjee,Sanhita Das,,PE,BTech (Old),I,-
+CIL7630,Finite Element Method,3 (3-0-0),Shuvajit Mukherjee,Sanhita Das,,MC,MTech (Energy2025),I,-
+CIL7630,Finite Element Method,3 (3-0-0),Shuvajit Mukherjee,Sanhita Das,,ME,MTech (Bridge2025),I,-
+CIL7630,Finite Element Method,3 (3-0-0),Shuvajit Mukherjee,Sanhita Das,,ME,MTech-NIT (Bridge2025),I,-
+CIL7630,Finite Element Method,3 (3-0-0),Shuvajit Mukherjee,Sanhita Das,,DC,PhD (2025),I,-
+CIL4400,Pavement Engineering,3 (3-0-0),Bhupendra Singh,,,PE,BTech (Old),J,-
+CIL7440,Green Buildings and Sustainable Materials,3 (3-0-0),Anusha S. Basavaraj,,,PE,BTech (Old),F,-
+CIL7440,Green Buildings and Sustainable Materials,3 (3-0-0),Anusha S. Basavaraj,,,ME,MTech (Energy2025),F,-
+CIL4370,Concrete Technology,4.5 (3-0-3),Yogiraj Sargam,,,PE,BTech (Old),G,M4
+CIL4410,Urban Transportation Planning,3 (3-0-0),Akshay Gupta,,,PE,BTech (Old),J,-
+CIL7880,Design of Bridge Structures,3 (3-0-0),Tekcham Gishan Singh,,,MC,MTech (Bridge2025),J,-
+CIL7880,Design of Bridge Structures,3 (3-0-0),Tekcham Gishan Singh,,,MC,MTech-NIT (Bridge2025),J,-
+CIL7880,Design of Bridge Structures,3 (3-0-0),Tekcham Gishan Singh,,,DC,PhD (2025),J,-
+CIL7040,Energy Geomechanics ,3 (3-0-0),Debanjan Guha Roy,,,ME,MTech (Energy2025),J,-
+CIL7080,Pollutant Transport Through Subsurface and In-situ Remediations,3 (3-0-0),Trishikhi Raychoudhury,,,ME,MTech (Env2025),I,-
+CIL7090,Wastewater Engineering,3 (3-0-0),Monika Dubey,,,ME,MTech (Env2025),F,-
+CIL7070,Environmental Chemistry,3 (3-0-0),Monika Dubey,,,ME,MTech (Env2025),G,-
+CIL7470,Foundation Engineering,3 (3-0-0),Pradeep Kumar Dammala,,,ME,MTech (Energy2025),H,-
+CIL7400,Traffic System and Management,3 (3-0-0),Ranju Mohan,,,ME,MTech (Env2025),I,-
+CIL7950,"Bridge Material, Construction and Evaluation",3 (3-0-0),Yogiraj Sargam,,,ME,MTech (Bridge2025),H,-
+CIL7670,Prestressed Concrete Structures,3 (3-0-0),Anusha S. Basavaraj,Sreejith Krishnan,,ME,MTech (Bridge2025),G,-
+CIL7460,Structural Dynamics,3 (3-0-0),Shuvajit Mukherjee,,,ME,MTech (Energy2025),G,-
+CIL7460,Structural Dynamics,3 (3-0-0),Shuvajit Mukherjee,,,ME,MTech (Bridge2025),G,-
+CIL7840,Mathematics for Civil Engineering,3 (3-0-0),Sanhita Das,Shuvajit Mukherjee,,MC,MTech-NIT (Env2025),F,-
+CIL7840,Mathematics for Civil Engineering,3 (3-0-0),Sanhita Das,Shuvajit Mukherjee,,MC,MTech-NIT (Energy2025),F,-
+CIL7840,Mathematics for Civil Engineering,3 (3-0-0),Sanhita Das,Shuvajit Mukherjee,,MC,MTech-NIT (Bridge2025),F,-
+CIL7830,Advanced Solid and Fluid Mechanics,3 (3-0-0),Shuvajit Mukherjee,Saran Aadhar,,MC,MTech-NIT (Env2025),H,-
+CIL7830,Advanced Solid and Fluid Mechanics,3 (3-0-0),Shuvajit Mukherjee,Saran Aadhar,,MC,MTech-NIT (Energy2025),H,-
+CIL7830,Advanced Solid and Fluid Mechanics,3 (3-0-0),Shuvajit Mukherjee,Saran Aadhar,,MC,MTech-NIT (Bridge2025),H,-
+CIL7870,Analysis of Bridge Structures,3 (3-0-0),P Ravi Prakash,Amit Kumar Rathi,,MC,MTech-NIT (Bridge2025),I,-
+CIL7850,Water Quality and Advanced Treatment Processes,3 (3-0-0),Trishikhi Raychoudhury,,,MC,MTech-NIT (Env2025),G,-
+CIL7860,Wind Turbine and Field Design ,3 (3-0-0),Amit Kumar Rathi,,,MC,MTech-NIT (Energy2025),G,-
+CIN1010,Design/Practical Experience,2 (0-0-4),Falak Vats,,,ND,BTech (Old),NG1,-
+CIN2030,Design/Practical Experience,2 (0-0-4),Trishikhi Raychoudhury,,,ND,BTech (Old),NG1,-
+CIN3010,Design/Practical Experience,2 (0-0-4),Tekcham Gishan Singh,,,ND,BTech (Old),NG1,-
+CIT7020,MTech Thesis Part-2,16 (0-0-16),Akshay Gupta,,,MT,"MTech (Env., Energy and Bridge)",T,-
+CIT8960,Thesis,16 (0-0-16),Bhupendra Singh,,,DT,PhD,T,-
+CIT8980,Thesis,6 (0-0-6),Bhupendra Singh,,,DT,PhD,T,-
+CIT8990,Thesis,12 (0-0-12),Bhupendra Singh,,,DT,PhD,T,-
+,,,,,,,,,
+,,,,,,,,,
+Note: ? Kindly contact the instructor for information.,,,,,,,,,
