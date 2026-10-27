@@ -1,0 +1,13 @@
+SAMPLE ACADEMIC REGULATIONS (DUMMY DATA - FOR SMOKE TESTING ONLY, NOT REAL RULES)
+
+1. Attendance
+A student must have a minimum of 75% attendance in a course to be allowed to sit in the Major examination of that course. Students with attendance below 75% will be awarded an F grade unless the attendance shortage is condoned by the Dean of Academics on medical grounds.
+
+2. Medical leave
+A student who is absent due to illness must inform the course instructor by email and submit a medical certificate from the institute medical centre within 3 working days of rejoining.
+
+3. Makeup examinations
+A makeup examination for a Minor or Major exam may be permitted only on medical grounds or for an approved institute activity. The request must be sent to the course instructor within 5 days of the missed examination.
+
+4. B.Tech. credit requirements
+To be awarded the B.Tech. degree a student must earn a total of 160 credits, which includes at least 12 credits of Open Electives and at least 9 credits of Humanities and Social Sciences courses.
