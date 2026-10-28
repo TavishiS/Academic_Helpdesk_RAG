@@ -32,6 +32,31 @@ RESULTS_DIR = ROOT / "results"
 
 SUPPORTED_EXTENSIONS = {".pdf", ".txt", ".csv"}
 
+# What each PDF really is. File names such as "MTech Structure.pdf" say little (that one is the
+# M.Tech. Data and Computational Sciences curriculum), so this title is added to every chunk before
+# embedding and shown to the LLM with each search hit. Files not listed fall back to their file name.
+DOCUMENT_TITLES = {
+    "academic_regulations.pdf": "Academic Regulations (B.Tech. rules: credits, grading, registration, makeup exams)",
+    "attendance_policy.pdf": "Attendance Policy",
+    "exams_policy.pdf": "Examination Policy",
+    "cse_curriculum.pdf": "B.Tech. Computer Science and Engineering (CSE) Curriculum Structure, 2nd year (2020)",
+    "AI&DS curriculum.pdf": "B.Tech. Artificial Intelligence and Data Science (AI&DS) Curriculum Structure AY 2020-21",
+    "B.Tech. in Bioengineering Curriculum.pdf": "B.Tech. Bioengineering Curriculum Structure",
+    "BS in Physics with Specialization Curriculum.pdf": "BS in Physics with Specialization Curriculum (Department of Physics)",
+    "Curriculum MTech CPS.pdf": "M.Tech. Cyber-Physical Systems (CPS) Curriculum",
+    "Curriculum for B.Tech. Programs.pdf": "B.Tech. Systems Science Curriculum (Computer Science Engineering and Electrical Engineering tracks)",
+    "EE curriculum.pdf": "B.Tech. Electronics Engineering Curriculum (Department of Electronics Engineering)",
+    "Integrated Teacher Education Program (ITEP) Curriculum.pdf": "Integrated Teacher Education Program (ITEP) 4-year integrated BSc-BEd Curriculum",
+    "M.Sc. Mathematics course booklet.pdf": "M.Sc. Mathematics Course Booklet (Department of Mathematics)",
+    "MTech Structure.pdf": "M.Tech. Data and Computational Sciences Program Curriculum",
+}
+
+
+def document_title(filename):
+    """Readable title of a knowledge-base file (the file name without extension if it is not registered)."""
+    return DOCUMENT_TITLES.get(filename, Path(filename).stem.replace("_", " "))
+
+
 # Department of a course CSV that has no "Department" column, by file name (without .csv).
 # Files not listed here get their file name as department ("physics.csv" -> "Physics").
 DEPARTMENT_BY_FILE = {

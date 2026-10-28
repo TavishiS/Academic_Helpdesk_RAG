@@ -4,6 +4,7 @@ Ingestion: load documents -> split into chunks -> embed -> store in ChromaDB.
 Supported formats: .pdf (page by page), .txt, .csv (rows converted to text).
 Run with:  python main.py ingest
 """
+import logging
 import re
 from pathlib import Path
 
@@ -16,6 +17,7 @@ from helpdesk import csv_store, retriever
 
 def load_pdf(path):
     from pypdf import PdfReader
+    logging.getLogger("pypdf").setLevel(logging.ERROR)  # some university PDFs print hundreds of harmless warnings
     reader = PdfReader(str(path))
     for i, page in enumerate(reader.pages):
         text = page.extract_text() or ""
@@ -142,7 +144,8 @@ def build_chunks(kb_dir):
                 # table blocks are already small and row-aligned, don't re-split them
                 pieces = [text] if meta.get("is_table") else chunk_text(text)
                 for piece in pieces:
-                    m = {"source": path.name, "file_type": path.suffix.lower()[1:]}
+                    m = {"source": path.name, "file_type": path.suffix.lower()[1:],
+                         "title": config.document_title(path.name)}
                     m.update({k: v for k, v in meta.items() if k != "is_table"})
                     all_chunks.append((piece, m))
         except Exception as e:
@@ -168,10 +171,11 @@ def ingest(kb_dir=None):
         pass
     collection = retriever.get_collection(create=True)
 
-    # The file name is prepended before embedding (e.g. "attendance_policy") because it
-    # is often the strongest hint about what a chunk is about. The stored document stays clean.
+    # The document title (see config.DOCUMENT_TITLES; the file name if unlisted) is prepended before
+    # embedding because it is often the strongest hint about what a chunk is about (which program,
+    # which department). The stored document stays clean.
     texts = [c for c, _ in chunks]
-    to_embed = [f"Document: {Path(m['source']).stem.replace('_', ' ')}\n{c}" for c, m in chunks]
+    to_embed = [f"Document: {m['title']}\n{c}" for c, m in chunks]
     print(f"Embedding {len(texts)} chunks with {config.EMBED_MODEL} ...")
     vectors = retriever.embed_passages(to_embed)
 

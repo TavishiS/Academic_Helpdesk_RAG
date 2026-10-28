@@ -60,6 +60,7 @@ def retrieve(query, k=None):
         hits.append({
             "text": doc,
             "source": meta.get("source"),
+            "title": meta.get("title"),
             "page": meta.get("page"),        # None for txt/csv
             "rows": meta.get("rows"),        # only for csv chunks
             "similarity": round(1 - dist, 3),  # chroma returns cosine *distance*

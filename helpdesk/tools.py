@@ -25,7 +25,7 @@ def _shorten(text, limit):
 
 
 def search_documents(query: str) -> dict:
-    """Search the academic documents (rules, regulations, curriculum, office orders, calendar).
+    """Search the academic documents (rules, regulations, curriculum of every program (B.Tech., M.Tech., M.Sc., BS, ITEP), office orders, calendar).
 
     Args:
         query: short search query, e.g. "attendance requirement major exam".
@@ -38,6 +38,7 @@ def search_documents(query: str) -> dict:
     return {"results": [{
         "text": _shorten(h["text"], config.MAX_PASSAGE_CHARS),
         "source": h["source"],
+        "document": h.get("title") or h["source"],
         "cite_as": f"{h['source']}, p.{h['page']}" if h.get("page") else h["source"],
         "similarity": h["similarity"],
     } for h in relevant]}
