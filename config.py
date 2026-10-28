@@ -46,6 +46,7 @@ DEPARTMENT_ALIASES = {
     "Electrical Engineering": ["eee", "electrical"],
     "Mechanical Engineering": ["mech", "mechanical"],
     "Civil and Infrastructure Engineering": ["ce", "civil"],
+    "Humanities": ["hss", "liberal arts", "lal", "liberal", "humanities social sciences"],
 }
 
 # ---------------- Embeddings / Vector store ----------------

@@ -82,24 +82,34 @@ def list_courses(department: str, level: str, course_type: str) -> dict:
     Use "" for a filter that is not needed. The list is shown to the student automatically.
 
     Args:
-        department: e.g. "CSE", "Electrical", "Mechanical", "Civil", or "".
-        level: e.g. "400", or "".
-        course_type: e.g. "elective", "core", or "".
+        department: the offering department, e.g. "CSE", "Electrical", "Mechanical", "Civil",
+            "Humanities", or "". NEVER put a department name here in course_type.
+        level: first digit of course code, e.g. "1", "4", "6", "7", or "".
+            "400 level" means level="4"; "100 level" means level="1".
+        course_type: academic category only: "elective", "core", or "". Never a department name.
     """
     if department.strip() and not csv_store.has_department(department):
         return {"error": f"There is no timetable data for the department '{department}'.",
                 "available_departments": csv_store.departments()}
     rows = csv_store.count_courses(department, level, course_type)
+    # collect all source files that were actually searched so the LLM can cite them
+    all_sources = sorted({r["source"] for r in csv_store.count_courses(department, "", "")}) \
+        if department.strip() else sorted({r["source"] for r in csv_store.count_courses("", "", "")})
     # one short line per course: the LLM reads these on every call, so no timings/credits here
     lines = [" | ".join(x for x in [_course_label(r), r.get("instructor", ""),
                                     f"slot {r['slot']}" if r.get("slot") else ""] if x) for r in rows]
-    return {
+    result = {
         # a ready-made sentence: small models misread a bare {"count": 2} surprisingly often
         "summary": f"{len(rows)} course(s) match.",
         "count": len(rows),
         "rows": lines,
-        "source": sorted({r["source"] for r in rows}),
+        "source": sorted({r["source"] for r in rows}) if rows else all_sources,
     }
+    if not rows:
+        result["note"] = ("No courses match the given filters. "
+                          "Check that department, level and course_type are correct. "
+                          "course_type must be 'elective', 'core' or '' — never a department name.")
+    return result
 
 
 def lookup_instructor_email(course_code: str) -> dict:

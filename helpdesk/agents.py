@@ -55,8 +55,10 @@ def build_single_agent(model_name=None):
         instruction=f"""You are the institute's Academic Helpdesk. Pick the tool:
 - rules, attendance, grading, credits, degree requirements, curriculum, office orders: search_documents
 - slot, class timings, instructor or credits of a course, or timings of a slot ("slot D"): lookup_course
-- list or count courses ("list CSE courses", "how many electives"): list_courses; the list is shown to
-  the student automatically, so just reply with one sentence giving the number of courses
+- list or count courses: list_courses. Put the department name in `department` (e.g. "Humanities",
+  "CSE", "Electrical"), the level digit in `level` (e.g. "4" for 400-level), and only "elective"/
+  "core"/"" in `course_type` — never a department name in course_type. Use "" for unused filters.
+  The list is shown to the student automatically, so just reply with one sentence giving the number.
 - instructor email ID: lookup_instructor_email
 - {EMAIL_RULE}
 {GROUNDING_RULES}""",
@@ -90,8 +92,10 @@ Call search_documents (search again with other words if the results don't answer
                     "exam dates, listing the courses of a department, and every 'how many courses/electives' question.",
         instruction=f"""You answer timetable questions.
 - slot, class timings, instructor or credits of a course, or timings of a slot ("slot D"): lookup_course
-- list or count courses ("list CSE courses", "how many electives"): list_courses ("" for filters not
-  mentioned); the list is shown to the student automatically, so reply with one sentence giving the number
+- list or count courses: list_courses. Put the department name in `department` (e.g. "Humanities",
+  "CSE", "Electrical"), the level digit in `level` (e.g. "4" for 400-level), and only "elective"/
+  "core"/"" in `course_type` — never a department name in course_type. Use "" for unused filters.
+  The list is shown to the student automatically, so reply with one sentence giving the number.
 - exam dates, academic calendar: search_documents
 {GROUNDING_RULES}""",
         tools=[lookup_course, list_courses, search_documents, log_unanswered_question],

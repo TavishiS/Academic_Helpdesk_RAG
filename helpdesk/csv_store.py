@@ -44,7 +44,7 @@ COURSE_ALIASES = {
     "department": ["department", "dept", "discipline", "offered by", "offering department"],
     "course_type": ["type", "course type", "category", "course category", "elective/core", "core/elective"],
     "credits": ["credits", "credit"],
-    "ltp": ["l t p", "ltp", "credit structure"],
+    "ltp": ["l t p", "ltp", "l t p structure", "credit structure"],
     "program": ["program", "programme", "batch"],
     "year": ["year"],
     "email": ["email", "email id", "e mail", "mail", "email address"],
