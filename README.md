@@ -109,11 +109,9 @@ AS_assignment/
 │   │                          faculty_contacts.csv (generated) + rules and curriculum PDFs
 │   └── sample/              tiny DUMMY files for a smoke test
 ├── report/
-│   ├── report.pdf           the 4-page report (built from report.md)
+│   ├── report.pdf           the report (4 pages), built from report.md
 │   ├── report.md            its source
-│   ├── report_full.md       the long version with every table and the full error analysis
-│   ├── analyze_results.py   recomputes every number of the report from results/
-│   ├── results_tables.md    its output (generated)
+│   ├── report_full.md       earlier draft of the report
 │   ├── build_pdf.py         report.md -> report.pdf (needs `pip install markdown` and Chrome)
 │   └── report_template.md   the blank template the report follows
 ├── logs/                    unanswered_questions.csv
