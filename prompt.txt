@@ -1,9 +1,0 @@
-assignment problem statement.
- 
- this is my autonomous systems course assignment. please make the assignment for me, and in a way that it looks as if i am
-  a student, who has just learnt rag, but has learnt it in depth (not too much depth that is not required). the file types i
-  want to use as knowledge base can be .pdf, .csv, .txt, and around 30 files can be there (as mentioned in the assignment)
-  for now, write the code compatible with all these file types as knowledge base. i will place the files later on.
-  i will be using llama 3.1b for LLM, ChromaDB as vector store and HuggingFace embedding model : BAAI/bge-small-en-v1.5.
-  please give me the assignment code end to end, and also create a good README file for me to understand how to run the
-  program and use it for testing.
