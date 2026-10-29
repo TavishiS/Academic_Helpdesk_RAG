@@ -1,39 +1,508 @@
 [
-  {"id": "P01", "category": "policy", "question": "What is the attendance requirement to sit in the Major exam?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["75|seventy-five percent|75 percent"], "expected_sources": ["attendance_policy.pdf"], "expected_answer": "75% attendance required"},
-  {"id": "P02", "category": "policy", "question": "How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": ["academic_regulations.pdf"], "expected_answer": "10 OE credits"},
-  {"id": "P03", "category": "policy", "question": "What is the total number of credits required for the B.Tech. degree?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": ["academic_regulations.pdf"], "expected_answer": "TODO"},
-  {"id": "P04", "category": "policy", "question": "What happens if my attendance in a course is below the required minimum?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["deregistration|de-registration|deregistered|deregister|de-registered|de-register"], "expected_sources": ["attendance_policy.pdf"], "expected_answer": "below 75% attendance, deregistration can happen"},
-  {"id": "P05", "category": "policy", "question": "What is the procedure to apply for a makeup examination?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": ["academic_regulations.pdf"], "expected_answer": "TODO"},
-  {"id": "P06", "category": "policy", "question": "How many grade points does an A grade carry?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["ten|10"], "expected_sources": ["academic_regulations.pdf"], "expected_answer": "10"},
-  {"id": "P07", "category": "policy", "question": "What is the minimum CGPA below which a student is put on academic probation?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": [], "expected_answer": "TODO"},
-  {"id": "P08", "category": "policy", "question": "What is the maximum number of credits a student can register for in a semester?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": ["academic_regulations.pdf"], "expected_answer": "TODO"},
-  {"id": "P09", "category": "policy", "question": "Can a B.Tech. student register for a 700 level (PG) course?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": ["academic_regulations.pdf"], "expected_answer": "TODO"},
-  {"id": "S01", "category": "schedule", "question": "What is the slot for the course Autonomous Systems?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "lookup_course", "expected_keywords": ["re:\\bE\\b"], "expected_sources": ["cse.csv"], "expected_answer": "Slot E (CSL7650 Autonomous Systems (AI+X))"},
-  {"id": "S02", "category": "schedule", "question": "Who is the instructor of CSL7650?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "lookup_course", "expected_keywords": ["Gaurav Harit"], "expected_sources": ["cse.csv"], "expected_answer": "Gaurav Harit"},
-  {"id": "S03", "category": "schedule", "question": "In which slot is CSL3030 offered?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "lookup_course", "expected_keywords": ["re:\\bB\\b"], "expected_sources": ["cse.csv"], "expected_answer": "Slot B (Operating Systems)"},
-  {"id": "S04", "category": "schedule", "question": "How many credits is the course Autonomous Systems?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "lookup_course", "expected_keywords": ["re:\\b3\\b|three"], "expected_sources": ["cse.csv"], "expected_answer": "3 credits (3-0-0)"},
-  {"id": "S05", "category": "schedule", "question": "When do the Major exams start this semester?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "search_documents", "expected_keywords": [], "expected_sources": [], "expected_answer": "TODO"},
-  {"id": "S06", "category": "schedule", "question": "At what time is the Autonomous Systems class held?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "lookup_course", "expected_keywords": ["11:00|11 am|11am"], "expected_sources": ["cse.csv"], "expected_answer": "Slot E: Tue, Thu, Fri 11:00-11:50"},
-  {"id": "C01", "category": "count", "question": "How many 400 level electives have been floated by the Humanities department in this semester?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "list_courses", "expected_keywords": [], "expected_sources": ["humanities.csv"], "expected_answer":""},
-  {"id": "C02", "category": "count", "question": "How many elective courses are offered by the Computer Science department this semester?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "list_courses", "expected_keywords": ["re:\\b5\\b|five"], "expected_sources": ["cse.csv"], "expected_answer": "5 (CSL7360, CSL7150, CSL7350, CSL7460, CSL7860)"},
-  {"id": "C03", "category": "count", "question": "How many courses has the Electrical Engineering department floated this semester?", "should_refuse": false, "expected_agent": "schedule_agent", "expected_tool": "list_courses", "expected_keywords": ["re:\\b33\\b"], "expected_sources": ["electrical.csv"], "expected_answer": "33 courses in electrical.csv"},
-  {"id": "E01", "category": "email", "question": "Write an email to the course instructor of CSL7650 that I need leave for 2 days", "should_refuse": false, "expected_agent": "email_agent", "expected_tool": "draft_email", "expected_keywords": ["gaurav.harit@iitj.example", "leave"], "expected_sources": [], "expected_answer": "Leave draft to gaurav.harit@iitj.example for 2 days"},
-  {"id": "E02", "category": "email", "question": "What is the email ID of the instructor of Autonomous Systems?", "should_refuse": false, "expected_agent": "email_agent", "expected_tool": "lookup_instructor_email", "expected_keywords": ["gaurav.harit@iitj.example"], "expected_sources": [], "expected_answer": "gaurav.harit@iitj.example"},
-  {"id": "E03", "category": "email", "question": "Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.", "should_refuse": false, "expected_agent": "email_agent", "expected_tool": "draft_email", "expected_keywords": ["susil.kumar.mohanty@iitj.example", "makeup"], "expected_sources": [], "expected_answer": "Makeup exam draft to susil.kumar.mohanty@iitj.example"},
-  {"id": "E04", "category": "email", "question": "I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.", "should_refuse": false, "expected_agent": "email_agent", "expected_tool": "draft_email", "expected_keywords": ["dip.sankar.banerjee@iitj.example", "leave"], "expected_sources": [], "expected_answer": "Leave draft to dip.sankar.banerjee@iitj.example for 3 days"},
-  {"id": "O01", "category": "out_of_scope", "question": "What are the available dining options on the campus?", "should_refuse": true, "expected_agent": "helpdesk_orchestrator", "expected_tool": "log_unanswered_question", "expected_keywords": [], "expected_sources": [], "expected_answer": "Refusal"},
-  {"id": "O02", "category": "out_of_scope", "question": "What is the best way to reach the campus from Jodhpur city center?", "should_refuse": true, "expected_agent": "helpdesk_orchestrator", "expected_tool": "log_unanswered_question", "expected_keywords": [], "expected_sources": [], "expected_answer": "Refusal"},
-  {"id": "O03", "category": "out_of_scope", "question": "What will the weather be like in Jodhpur tomorrow?", "should_refuse": true, "expected_agent": "helpdesk_orchestrator", "expected_tool": "log_unanswered_question", "expected_keywords": [], "expected_sources": [], "expected_answer": "Refusal"},
-  {"id": "O04", "category": "out_of_scope", "question": "Who won the last cricket world cup?", "should_refuse": true, "expected_agent": "helpdesk_orchestrator", "expected_tool": "log_unanswered_question", "expected_keywords": [], "expected_sources": [], "expected_answer": "Refusal"},
-  {"id": "O05", "category": "out_of_scope", "question": "Which laptop should I buy for programming?", "should_refuse": true, "expected_agent": "helpdesk_orchestrator", "expected_tool": "log_unanswered_question", "expected_keywords": [], "expected_sources": [], "expected_answer": "Refusal"},
-  {"id": "O06", "category": "out_of_scope", "question": "What is the timing of the campus gym?", "should_refuse": true, "expected_agent": "helpdesk_orchestrator", "expected_tool": "log_unanswered_question", "expected_keywords": [], "expected_sources": [], "expected_answer": "Refusal"},
-  {"id": "D01", "category": "curriculum", "question": "Which specializations are offered in the B.Tech. AI & DS program?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["Visual Computing"], "expected_sources": ["AI&DS curriculum.pdf"], "expected_answer": "Visual Computing, Socio-Digital Realities, Robotics, AIOT"},
-  {"id": "D02", "category": "curriculum", "question": "How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b18\\b"], "expected_sources": ["B.Tech. in Bioengineering Curriculum.pdf"], "expected_answer": "18 PE credits"},
-  {"id": "D03", "category": "curriculum", "question": "What is the grand total of credits in the BS in Physics with Specialization program?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b175\\b"], "expected_sources": ["BS in Physics with Specialization Curriculum.pdf"], "expected_answer": "175 credits"},
-  {"id": "D04", "category": "curriculum", "question": "What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b56\\b"], "expected_sources": ["Curriculum MTech CPS.pdf"], "expected_answer": "56 credits"},
-  {"id": "D05", "category": "curriculum", "question": "How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b7\\b|seven"], "expected_sources": ["Curriculum for B.Tech. Programs.pdf"], "expected_answer": "7 credits (0-0-21)"},
-  {"id": "D06", "category": "curriculum", "question": "How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b90\\b"], "expected_sources": ["EE curriculum.pdf"], "expected_answer": "90 credits"},
-  {"id": "D07", "category": "curriculum", "question": "What is the total number of credits in the Integrated Teacher Education Program (ITEP)?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b176\\b"], "expected_sources": ["Integrated Teacher Education Program (ITEP) Curriculum.pdf"], "expected_answer": "176 credits"},
-  {"id": "D08", "category": "curriculum", "question": "What is the total credit requirement of the M.Sc. Mathematics program?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b72\\b"], "expected_sources": ["M.Sc. Mathematics course booklet.pdf"], "expected_answer": "72 credits"},
-  {"id": "D09", "category": "curriculum", "question": "What is the grand total of credits in the M.Tech. Data and Computational Sciences program?", "should_refuse": false, "expected_agent": "policy_agent", "expected_tool": "search_documents", "expected_keywords": ["re:\\b57\\b"], "expected_sources": ["MTech Structure.pdf"], "expected_answer": "57 credits"}
+    {
+        "id": "P01",
+        "category": "policy",
+        "question": "What is the attendance requirement to sit in the Major exam?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "75|seventy-five percent|75 percent"
+        ],
+        "expected_sources": [
+            "attendance_policy.pdf"
+        ],
+        "expected_answer": "75% attendance required"
+    },
+    {
+        "id": "P02",
+        "category": "policy",
+        "question": "How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [
+            "academic_regulations.pdf"
+        ],
+        "expected_answer": "10 OE credits"
+    },
+    {
+        "id": "P03",
+        "category": "policy",
+        "question": "What is the total number of credits required for the B.Tech. degree?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [
+            "academic_regulations.pdf"
+        ],
+        "expected_answer": "TODO"
+    },
+    {
+        "id": "P04",
+        "category": "policy",
+        "question": "What happens if my attendance in a course is below the required minimum?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "deregistration|de-registration|deregistered|deregister|de-registered|de-register"
+        ],
+        "expected_sources": [
+            "attendance_policy.pdf"
+        ],
+        "expected_answer": "below 75% attendance, deregistration can happen"
+    },
+    {
+        "id": "P05",
+        "category": "policy",
+        "question": "What is the procedure to apply for a makeup examination?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [
+            "academic_regulations.pdf"
+        ],
+        "expected_answer": "TODO"
+    },
+    {
+        "id": "P06",
+        "category": "policy",
+        "question": "How many grade points does an A grade carry?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "ten|10"
+        ],
+        "expected_sources": [
+            "academic_regulations.pdf"
+        ],
+        "expected_answer": "10"
+    },
+    {
+        "id": "P07",
+        "category": "policy",
+        "question": "What is the minimum CGPA below which a student is put on academic probation?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "TODO"
+    },
+    {
+        "id": "P08",
+        "category": "policy",
+        "question": "What is the maximum number of credits a student can register for in a semester?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [
+            "academic_regulations.pdf"
+        ],
+        "expected_answer": "TODO"
+    },
+    {
+        "id": "P09",
+        "category": "policy",
+        "question": "Can a B.Tech. student register for a 700 level (PG) course?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [
+            "academic_regulations.pdf"
+        ],
+        "expected_answer": "TODO"
+    },
+    {
+        "id": "S01",
+        "category": "schedule",
+        "question": "What is the slot for the course Autonomous Systems?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "lookup_course",
+        "expected_keywords": [
+            "re:\\bE\\b"
+        ],
+        "expected_sources": [
+            "cse.csv"
+        ],
+        "expected_answer": "Slot E (CSL7650 Autonomous Systems (AI+X))"
+    },
+    {
+        "id": "S02",
+        "category": "schedule",
+        "question": "Who is the instructor of CSL7650?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "lookup_course",
+        "expected_keywords": [
+            "Gaurav Harit"
+        ],
+        "expected_sources": [
+            "cse.csv"
+        ],
+        "expected_answer": "Gaurav Harit"
+    },
+    {
+        "id": "S03",
+        "category": "schedule",
+        "question": "In which slot is CSL3030 offered?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "lookup_course",
+        "expected_keywords": [
+            "re:\\bB\\b"
+        ],
+        "expected_sources": [
+            "cse.csv"
+        ],
+        "expected_answer": "Slot B (Operating Systems)"
+    },
+    {
+        "id": "S04",
+        "category": "schedule",
+        "question": "How many credits is the course Autonomous Systems?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "lookup_course",
+        "expected_keywords": [
+            "re:\\b3\\b|three"
+        ],
+        "expected_sources": [
+            "cse.csv"
+        ],
+        "expected_answer": "3 credits (3-0-0)"
+    },
+    {
+        "id": "S05",
+        "category": "schedule",
+        "question": "When do the Major exams start this semester?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "TODO"
+    },
+    {
+        "id": "S06",
+        "category": "schedule",
+        "question": "At what time is the Autonomous Systems class held?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "lookup_course",
+        "expected_keywords": [
+            "11:00|11 am|11am"
+        ],
+        "expected_sources": [
+            "cse.csv"
+        ],
+        "expected_answer": "Slot E: Tue, Thu, Fri 11:00-11:50"
+    },
+    {
+        "id": "C01",
+        "category": "count",
+        "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "list_courses",
+        "expected_keywords": [],
+        "expected_sources": [
+            "humanities.csv"
+        ],
+        "expected_answer": ""
+    },
+    {
+        "id": "C02",
+        "category": "count",
+        "question": "How many elective courses are offered by the Computer Science department this semester?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "list_courses",
+        "expected_keywords": [
+            "re:\\b5\\b|five"
+        ],
+        "expected_sources": [
+            "cse.csv"
+        ],
+        "expected_answer": "5 (CSL7360, CSL7150, CSL7350, CSL7460, CSL7860)"
+    },
+    {
+        "id": "C03",
+        "category": "count",
+        "question": "How many courses has the Electrical Engineering department floated this semester?",
+        "should_refuse": false,
+        "expected_agent": "schedule_agent",
+        "expected_tool": "list_courses",
+        "expected_keywords": [
+            "re:\\b33\\b"
+        ],
+        "expected_sources": [
+            "electrical.csv"
+        ],
+        "expected_answer": "33 courses in electrical.csv"
+    },
+    {
+        "id": "E01",
+        "category": "email",
+        "question": "Write an email to the course instructor of CSL7650 that I need leave for 2 days",
+        "should_refuse": false,
+        "expected_agent": "email_agent",
+        "expected_tool": "draft_email",
+        "expected_keywords": [
+            "gaurav.harit@iitj.example",
+            "leave"
+        ],
+        "expected_sources": [],
+        "expected_answer": "Leave draft to gaurav.harit@iitj.example for 2 days"
+    },
+    {
+        "id": "E02",
+        "category": "email",
+        "question": "What is the email ID of the instructor of Autonomous Systems?",
+        "should_refuse": false,
+        "expected_agent": "email_agent",
+        "expected_tool": "lookup_instructor_email",
+        "expected_keywords": [
+            "gaurav.harit@iitj.example"
+        ],
+        "expected_sources": [],
+        "expected_answer": "gaurav.harit@iitj.example"
+    },
+    {
+        "id": "E03",
+        "category": "email",
+        "question": "Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.",
+        "should_refuse": false,
+        "expected_agent": "email_agent",
+        "expected_tool": "draft_email",
+        "expected_keywords": [
+            "susil.kumar.mohanty@iitj.example",
+            "makeup"
+        ],
+        "expected_sources": [],
+        "expected_answer": "Makeup exam draft to susil.kumar.mohanty@iitj.example"
+    },
+    {
+        "id": "E04",
+        "category": "email",
+        "question": "I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.",
+        "should_refuse": false,
+        "expected_agent": "email_agent",
+        "expected_tool": "draft_email",
+        "expected_keywords": [
+            "dip.sankar.banerjee@iitj.example",
+            "leave"
+        ],
+        "expected_sources": [],
+        "expected_answer": "Leave draft to dip.sankar.banerjee@iitj.example for 3 days"
+    },
+    {
+        "id": "O01",
+        "category": "out_of_scope",
+        "question": "What are the available dining options on the campus?",
+        "should_refuse": true,
+        "expected_agent": "helpdesk_orchestrator",
+        "expected_tool": "log_unanswered_question",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "Refusal"
+    },
+    {
+        "id": "O02",
+        "category": "out_of_scope",
+        "question": "What is the best way to reach the campus from Jodhpur city center?",
+        "should_refuse": true,
+        "expected_agent": "helpdesk_orchestrator",
+        "expected_tool": "log_unanswered_question",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "Refusal"
+    },
+    {
+        "id": "O03",
+        "category": "out_of_scope",
+        "question": "What will the weather be like in Jodhpur tomorrow?",
+        "should_refuse": true,
+        "expected_agent": "helpdesk_orchestrator",
+        "expected_tool": "log_unanswered_question",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "Refusal"
+    },
+    {
+        "id": "O04",
+        "category": "out_of_scope",
+        "question": "Who won the last cricket world cup?",
+        "should_refuse": true,
+        "expected_agent": "helpdesk_orchestrator",
+        "expected_tool": "log_unanswered_question",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "Refusal"
+    },
+    {
+        "id": "O05",
+        "category": "out_of_scope",
+        "question": "Which laptop should I buy for programming?",
+        "should_refuse": true,
+        "expected_agent": "helpdesk_orchestrator",
+        "expected_tool": "log_unanswered_question",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "Refusal"
+    },
+    {
+        "id": "O06",
+        "category": "out_of_scope",
+        "question": "What is the timing of the campus gym?",
+        "should_refuse": true,
+        "expected_agent": "helpdesk_orchestrator",
+        "expected_tool": "log_unanswered_question",
+        "expected_keywords": [],
+        "expected_sources": [],
+        "expected_answer": "Refusal"
+    },
+    {
+        "id": "D01",
+        "category": "curriculum",
+        "question": "Which specializations are offered in the B.Tech. AI & DS program?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "Visual Computing"
+        ],
+        "expected_sources": [
+            "AI&DS curriculum.pdf"
+        ],
+        "expected_answer": "Visual Computing, Socio-Digital Realities, Robotics, AIOT"
+    },
+    {
+        "id": "D02",
+        "category": "curriculum",
+        "question": "How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b18\\b"
+        ],
+        "expected_sources": [
+            "B.Tech. in Bioengineering Curriculum.pdf"
+        ],
+        "expected_answer": "18 PE credits"
+    },
+    {
+        "id": "D03",
+        "category": "curriculum",
+        "question": "What is the grand total of credits in the BS in Physics with Specialization program?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b175\\b"
+        ],
+        "expected_sources": [
+            "BS in Physics with Specialization Curriculum.pdf"
+        ],
+        "expected_answer": "175 credits"
+    },
+    {
+        "id": "D04",
+        "category": "curriculum",
+        "question": "What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b56\\b"
+        ],
+        "expected_sources": [
+            "Curriculum MTech CPS.pdf"
+        ],
+        "expected_answer": "56 credits"
+    },
+    {
+        "id": "D05",
+        "category": "curriculum",
+        "question": "How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b7\\b|seven"
+        ],
+        "expected_sources": [
+            "Curriculum for B.Tech. Programs.pdf"
+        ],
+        "expected_answer": "7 credits (0-0-21)"
+    },
+    {
+        "id": "D06",
+        "category": "curriculum",
+        "question": "How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b90\\b"
+        ],
+        "expected_sources": [
+            "EE curriculum.pdf"
+        ],
+        "expected_answer": "90 credits"
+    },
+    {
+        "id": "D07",
+        "category": "curriculum",
+        "question": "What is the total number of credits in the Integrated Teacher Education Program (ITEP)?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b176\\b"
+        ],
+        "expected_sources": [
+            "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+        ],
+        "expected_answer": "176 credits"
+    },
+    {
+        "id": "D08",
+        "category": "curriculum",
+        "question": "What is the total credit requirement of the M.Sc. Mathematics program?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b72\\b"
+        ],
+        "expected_sources": [
+            "M.Sc. Mathematics course booklet.pdf"
+        ],
+        "expected_answer": "72 credits"
+    },
+    {
+        "id": "D09",
+        "category": "curriculum",
+        "question": "What is the grand total of credits in the M.Tech. Data and Computational Sciences program?",
+        "should_refuse": false,
+        "expected_agent": "policy_agent",
+        "expected_tool": "search_documents",
+        "expected_keywords": [
+            "re:\\b57\\b"
+        ],
+        "expected_sources": [
+            "MTech Structure.pdf"
+        ],
+        "expected_answer": "57 credits"
+    }
 ]
