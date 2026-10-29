@@ -1,0 +1,569 @@
+run,id,category,question,answer,agent,tools,refused,auto_correct,manual_correct,has_citation,citation_valid,citation_correct,tool_ok,route_ok,cited,retrieved_sources,latency_s,error
+1,P01,policy,What is the attendance requirement to sit in the Major exam?,"The attendance requirement to sit in the Major exam is 75%. 
+
+Source: attendance_policy.pdf",academic_helpdesk,search_documents,False,True,,True,True,False,True,False,attendance_policy.pdf,academic_regulations.pdf;attendance_policy.pdf,66.59,
+1,P02,policy,How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?,"You need to earn 12 Open Elective credits to get a B.Tech. Degree.
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,EE curriculum.pdf,EE curriculum.pdf,5.46,
+1,P03,policy,What is the total number of credits required for the B.Tech. degree?,"The total number of credits required for the B.Tech. degree is 180.
+
+Source: Curriculum for B.Tech. Programs.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,Curriculum for B.Tech. Programs.pdf,Curriculum for B.Tech. Programs.pdf;academic_regulations.pdf,5.61,
+1,P04,policy,What happens if my attendance in a course is below the required minimum?,"If your attendance in a course is below the required minimum, you will be allowed to appear for the exams, but you will be required to score at least a C grade to pass the course. If your marks are lower than the cut-off for a C grade, you will be awarded an F grade.
+
+Source: attendance_policy.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,attendance_policy.pdf,academic_regulations.pdf;attendance_policy.pdf,8.15,
+1,P05,policy,What is the procedure to apply for a makeup examination?,"The procedure to apply for a makeup examination is as follows: a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. Alternatively, the student can consult with the Dean of Academics, who may permit the student to appear for a make-up examination any day before the end of the first week of the next semester.
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,8.88,
+1,P06,policy,How many grade points does an A grade carry?,"The grade point for an A grade is 10. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,4.38,
+1,P07,policy,What is the minimum CGPA below which a student is put on academic probation?,"The minimum CGPA below which a student is put on academic probation is 5.0. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,,True,False,academic_regulations.pdf,academic_regulations.pdf,5.19,
+1,P08,policy,What is the maximum number of credits a student can register for in a semester?,"The maximum number of credits a student can register for in a semester is 25. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,4.72,
+1,P09,policy,Can a B.Tech. student register for a 700 level (PG) course?,A B.Tech. student cannot register for a 700 level (PG) course.,academic_helpdesk,search_documents,False,,,False,False,False,True,False,,Curriculum for B.Tech. Programs.pdf;EE curriculum.pdf;academic_regulations.pdf,4.92,
+1,S01,schedule,What is the slot for the course Autonomous Systems?,"The slot for the course Autonomous Systems is E. 
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,3.46,
+1,S02,schedule,Who is the instructor of CSL7650?,"The instructor of CSL7650 is Gaurav Harit. 
+
+Source: cse.csv, faculty_contacts.csv",academic_helpdesk,lookup_instructor_email,False,True,,True,True,True,False,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,4.72,
+1,S03,schedule,In which slot is CSL3030 offered?,"The course CSL3030 is offered in slot B. 
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.31,
+1,S04,schedule,How many credits is the course Autonomous Systems?,"The course Autonomous Systems is worth 3 credits. 
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.19,
+1,S05,schedule,When do the Major exams start this semester?,"The Major exams for this semester will start at the end of the semester.
+
+Source: exams_policy.pdf",academic_helpdesk,search_documents,False,,,True,True,,True,False,exams_policy.pdf,academic_regulations.pdf;exams_policy.pdf,4.72,
+1,S06,schedule,At what time is the Autonomous Systems class held?,"The Autonomous Systems class is held on Tuesdays, Thursdays, and Fridays from 11:00-11:50 AM.
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.22,
+1,C01,count,How many 400 level electives have been floated by the Humanities department in this semester?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,list_courses;log_unanswered_question,True,,,,,,True,False,,humanities.csv,5.17,
+1,C02,count,How many elective courses are offered by the Computer Science department this semester?,"The Computer Science department is offering 5 elective courses this semester:
+
+  1. CSL7360 Computer Vision | Deepak Mishra | slot I
+  2. CSL7150 Cybersecurity | Susil Kumar Mohanty | slot J
+  3. CSL7350 Selected Topics in AI | Navchetan Awasthi
+  4. CSL7460 Mobile and Pervasive Computing | Suchetana Chakraborty
+  5. CSL7860 Foundation Models and Generative AI | Angshuman Paul
+
+Source: cse.csv",academic_helpdesk,list_courses,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.87,
+1,C03,count,How many courses has the Electrical Engineering department floated this semester?,"There are 33 courses floated by the Electrical Engineering department this semester:
+
+  1. EEL2040 Engineering Electromagnetics | Bharat Singh Rajpurohit | slot E
+  2. EEL2XXX Digital Design | Payal Vyankat Dahiwale | slot A
+  3. EEL2XXX Engineering Optimization | Rajendra Nagar | slot B
+  4. EEL3020 Electrical Machines | Abdul Gafoor Shaik | slot D
+  5. EEL2XXX Statistical Inference and Modeling | Manish Narwaria | slot C
+  6. EEP2XXX Electrical Engineering Lab I | Rajendra Nagar, Kunwar, Bharat Singh Rajpurohit, Payal Vyankat Dahiwale | slot M3, M4, M5
+  7. EEL3060 Power Engineering | Bandi Ravi Kumar | slot E, M7, M10
+  8. EEL3070 Digital Signal Processing | Amit Bhardwaj | slot B
+  9. EEP3030 Electrical Machines Lab | Abdul Gafoor Shaik, Bharat Singh Rajpurohit | slot M1, M7, M9
+ 10. EEL3090 Embedded Systems | Bhivraj Suthar, Niladri Sekhar Tripathy | slot C
+ 11. EEL3080 Data Communication Networks | ELECTRONICS Dept. | slot D
+ 12. EEP3020 Digital Systems Lab | ELECTRONICS Dept. | slot M1, M2
+ 13. EEP3010 Communication Systems Lab | ELECTRONICS Dept. | slot M1, M2
+ 14. EEL7140 Advanced Control System | Saurav Kumar | slot F
+ 15. EEL7300 Computational Methods in Power System Analysis | Vineeth V | slot I
+ 16. EEL7700 Electric Drive Systems | Nishant Kumar | slot G
+ 17. EEL71720 Power Electronic Converters | Kunwar Aditya | slot H
+ 18. EEP7140 Integrated Power and Drives Laboratory | Ravi Yadav | slot L9
+ 19. EEL7080 Introduction to CyberPhysical Systems | Niladri Sekhar Tripathy | slot H
+ 20. EEL7150 Embedded System Design | Deepak Fulwani | slot G
+ 21. EEL7200 Data Communication and Networking | ELECTRONICS Dept. | slot I
+ 22. EEL7XXX Optimization Methods for Power System | Vineeth V | slot K
+ 23. EEL7XXX Control Techniques in Power Engineering | Kunwar Aditya | slot I
+ 24. EEL7XXX Modern Power System Operation and Control | Ravi Yadav | slot I
+ 25. EEL7340 Power System Protection | Bandi Ravi Kumar | slot N
+ 26. EEL7220 Renewable Energy Systems | Abdul Gafoor Shaik | slot J
+ 27. EEL7030 Advanced Digital Signal Processing | Sandeep Yadav | slot J
+ 28. RML7220 Mobile Robots | Riby Abraham Boby | slot H
+ 29. MEL7080 Robotics | Roshan Kumar Hota | slot G
+ 30. RML7310 Networked Dynamical Systems and Control | Anoop Jain | slot K
+ 31. EEL7XXX Optimization Techniques for Signal Representation and Processing | Himanshu Kumar | slot N
+ 32. EEL1010 Introduction to Electrical Engineering | Deepak Fulwani | slot U, M6 (Tentative)
+ 33. EEL7009 Applied Linear Algebra | Vineeth V | slot N
+
+Source: electrical.csv",academic_helpdesk,list_courses,False,True,,True,True,True,True,False,electrical.csv,electrical.csv,5.52,
+1,E01,email,Write an email to the course instructor of CSL7650 that I need leave for 2 days,"Draft is ready to review and was NOT sent.
+
+Source: draft_email.py
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: gaurav.harit@iitj.example
+Subject: Leave application for 2 days - CSL7650 Autonomous Systems (AI+X)
+
+Dear Prof. Gaurav Harit,
+
+I am writing to inform you that I will not be able to attend the classes of CSL7650 Autonomous Systems (AI+X) for 2 days due to [reason]. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,,cse.csv;faculty_contacts.csv,4.83,
+1,E02,email,What is the email ID of the instructor of Autonomous Systems?,"The email ID of the instructor of Autonomous Systems is gaurav.harit@iitj.example.
+
+Source: cse.csv, faculty_contacts.csv",academic_helpdesk,lookup_instructor_email,False,True,,,,,True,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,5.1,
+1,E03,email,Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.,"Draft is ready to review and was NOT sent.
+
+Source: cse.csv, faculty_contacts.csv
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: susil.kumar.mohanty@iitj.example
+Subject: Request for makeup examination - CSL3030 Operating Systems
+
+Dear Prof. Susil Kumar Mohanty,
+
+I could not appear for the examination ([dates]) due to fever. I kindly request you to permit me to take a makeup examination. I will submit the supporting documents (e.g. medical certificate) as required by the institute rules.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,5.79,
+1,E04,email,I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.,"Draft is ready to review and was NOT sent.
+
+Source: draft_email.py
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: dip.sankar.banerjee@iitj.example
+Subject: Leave application for 3 days - CSL2120 Data Structures and Algorithms
+
+Dear Prof. Dip Sankar Banerjee,
+
+I am writing to inform you that I will not be able to attend the classes of CSL2120 Data Structures and Algorithms for 3 days due to viral fever. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,,cse.csv;faculty_contacts.csv,5.75,
+1,O01,out_of_scope,What are the available dining options on the campus?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,5.04,
+1,O02,out_of_scope,What is the best way to reach the campus from Jodhpur city center?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,6.1,
+1,O03,out_of_scope,What will the weather be like in Jodhpur tomorrow?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,2.48,
+1,O04,out_of_scope,Who won the last cricket world cup?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,2.63,
+1,O05,out_of_scope,Which laptop should I buy for programming?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,1.58,
+1,O06,out_of_scope,What is the timing of the campus gym?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,4.49,
+1,D01,curriculum,Which specializations are offered in the B.Tech. AI & DS program?,"The specializations offered in the B.Tech. AI & DS program are:
+
+1. Visual Computing
+2. Socio-digital realities
+3. Robotics
+4. AIOT
+5. Management specialization with AI and Technology focus (leading to MBA (BTech + MBA dual degree program))
+
+Source: AI&DS curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,AI&DS curriculum.pdf,AI&DS curriculum.pdf,8.04,
+1,D02,curriculum,How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?,"There are 18 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.
+
+Source: B.Tech. in Bioengineering Curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,B.Tech. in Bioengineering Curriculum.pdf,B.Tech. in Bioengineering Curriculum.pdf,5.45,
+1,D03,curriculum,What is the grand total of credits in the BS in Physics with Specialization program?,"The grand total of credits in the BS in Physics with Specialization program is 29. 
+
+Source: BS in Physics with Specialization Curriculum.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,BS in Physics with Specialization Curriculum.pdf,BS in Physics with Specialization Curriculum.pdf,5.58,
+1,D04,curriculum,What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?,"The total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program is 56.
+
+Source: Curriculum MTech CPS.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,Curriculum MTech CPS.pdf,Curriculum MTech CPS.pdf,6.14,
+1,D05,curriculum,How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?,"The B.Tech. Project SS499 in the B.Tech. Systems Science curriculum is 22 credits.
+
+Source: Curriculum for B.Tech. Programs.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,Curriculum for B.Tech. Programs.pdf,Curriculum for B.Tech. Programs.pdf,5.76,
+1,D06,curriculum,How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?,"The B.Tech. Electronics Engineering curriculum has 90 Programme Core credits. 
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,EE curriculum.pdf,EE curriculum.pdf,4.92,
+1,D07,curriculum,What is the total number of credits in the Integrated Teacher Education Program (ITEP)?,"The total number of credits in the Integrated Teacher Education Program (ITEP) is 176. 
+
+Source: Integrated Teacher Education Program (ITEP) Curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,Integrated Teacher Education Program (ITEP) Curriculum.pdf,Integrated Teacher Education Program (ITEP) Curriculum.pdf,5.39,
+1,D08,curriculum,What is the total credit requirement of the M.Sc. Mathematics program?,"The total credit requirement of the M.Sc. Mathematics program is not explicitly mentioned in the search results. However, the course booklet mentions that the program is designed to maintain a balance between theoretical analysis and practical applications of mathematics, and that the core courses establish a solid foundation in fundamental mathematical concepts while enhancing the analytical capabilities of students. 
+
+Source: M.Sc. Mathematics course booklet.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,M.Sc. Mathematics course booklet.pdf,M.Sc. Mathematics course booklet.pdf;academic_regulations.pdf,8.76,
+1,D09,curriculum,What is the grand total of credits in the M.Tech. Data and Computational Sciences program?,"The grand total of credits in the M.Tech. Data and Computational Sciences program is 108. 
+
+Source: MTech Structure.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,MTech Structure.pdf,MTech Structure.pdf,5.12,
+2,P01,policy,What is the attendance requirement to sit in the Major exam?,"The attendance requirement to sit in the Major exam is 75%. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,True,,True,True,False,True,False,academic_regulations.pdf,academic_regulations.pdf;attendance_policy.pdf,5.54,
+2,P02,policy,How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?,"You need to earn 12 Open Elective credits to get a B.Tech. Degree.
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,EE curriculum.pdf,EE curriculum.pdf,5.11,
+2,P03,policy,What is the total number of credits required for the B.Tech. degree?,"The total number of credits required for the B.Tech. degree is 180.
+
+Source: Curriculum for B.Tech. Programs.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,Curriculum for B.Tech. Programs.pdf,Curriculum for B.Tech. Programs.pdf;academic_regulations.pdf,5.08,
+2,P04,policy,What happens if my attendance in a course is below the required minimum?,"If your attendance in a course is below the required minimum of 75%, you will be allowed to appear for the exams, but you will be required to score at least a C grade to pass the course. If your marks are lower than the cut-off for a C grade, you will be awarded an F grade.
+
+Source: attendance_policy.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,attendance_policy.pdf,academic_regulations.pdf;attendance_policy.pdf,7.47,
+2,P05,policy,What is the procedure to apply for a makeup examination?,"To apply for a makeup examination, a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. The student should make an application to the Dean (Academics) through the course instructor within ten days from the date of the examination missed, explaining the reasons for their absence.
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,8.18,
+2,P06,policy,How many grade points does an A grade carry?,"An A grade carries 10 grade points.
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,4.11,
+2,P07,policy,What is the minimum CGPA below which a student is put on academic probation?,"The minimum CGPA below which a student is put on academic probation is 5.0. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,,True,False,academic_regulations.pdf,academic_regulations.pdf,5.01,
+2,P08,policy,What is the maximum number of credits a student can register for in a semester?,"The maximum number of credits a student can register for in a semester is 25. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,4.73,
+2,P09,policy,Can a B.Tech. student register for a 700 level (PG) course?,"A B.Tech. student cannot register for a 700 level (PG) course. 
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,EE curriculum.pdf,Curriculum for B.Tech. Programs.pdf;EE curriculum.pdf;academic_regulations.pdf,4.29,
+2,S01,schedule,What is the slot for the course Autonomous Systems?,"The slot for the course Autonomous Systems is E. 
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,3.42,
+2,S02,schedule,Who is the instructor of CSL7650?,"The instructor of CSL7650 is Gaurav Harit. 
+
+Source: cse.csv, faculty_contacts.csv",academic_helpdesk,lookup_instructor_email,False,True,,True,True,True,False,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,4.76,
+2,S03,schedule,In which slot is CSL3030 offered?,"The course CSL3030 is offered in slot B. 
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.43,
+2,S04,schedule,How many credits is the course Autonomous Systems?,"The course Autonomous Systems has 3 credits. 
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.17,
+2,S05,schedule,When do the Major exams start this semester?,"The Major exams start this semester after the midpoint, and the exact date will be provided by the office of Academics.
+
+Source: exams_policy.pdf",academic_helpdesk,search_documents,False,,,True,True,,True,False,exams_policy.pdf,academic_regulations.pdf;exams_policy.pdf,5.78,
+2,S06,schedule,At what time is the Autonomous Systems class held?,"The Autonomous Systems class is held on Tuesdays, Thursdays, and Fridays from 11:00-11:50 AM.
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.96,
+2,C01,count,How many 400 level electives have been floated by the Humanities department in this semester?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,list_courses;log_unanswered_question,True,,,,,,True,False,,humanities.csv,5.22,
+2,C02,count,How many elective courses are offered by the Computer Science department this semester?,"There are 5 elective courses offered by the Computer Science department this semester:
+
+  1. CSL7360 Computer Vision | Deepak Mishra | slot I
+  2. CSL7150 Cybersecurity | Susil Kumar Mohanty | slot J
+  3. CSL7350 Selected Topics in AI | Navchetan Awasthi
+  4. CSL7460 Mobile and Pervasive Computing | Suchetana Chakraborty
+  5. CSL7860 Foundation Models and Generative AI | Angshuman Paul
+
+Source: cse.csv",academic_helpdesk,list_courses,False,True,,True,True,True,True,False,cse.csv,cse.csv,5.03,
+2,C03,count,How many courses has the Electrical Engineering department floated this semester?,"There are 33 courses floated by the Electrical Engineering department this semester:
+
+  1. EEL2040 Engineering Electromagnetics | Bharat Singh Rajpurohit | slot E
+  2. EEL2XXX Digital Design | Payal Vyankat Dahiwale | slot A
+  3. EEL2XXX Engineering Optimization | Rajendra Nagar | slot B
+  4. EEL3020 Electrical Machines | Abdul Gafoor Shaik | slot D
+  5. EEL2XXX Statistical Inference and Modeling | Manish Narwaria | slot C
+  6. EEP2XXX Electrical Engineering Lab I | Rajendra Nagar, Kunwar, Bharat Singh Rajpurohit, Payal Vyankat Dahiwale | slot M3, M4, M5
+  7. EEL3060 Power Engineering | Bandi Ravi Kumar | slot E, M7, M10
+  8. EEL3070 Digital Signal Processing | Amit Bhardwaj | slot B
+  9. EEP3030 Electrical Machines Lab | Abdul Gafoor Shaik, Bharat Singh Rajpurohit | slot M1, M7, M9
+ 10. EEL3090 Embedded Systems | Bhivraj Suthar, Niladri Sekhar Tripathy | slot C
+ 11. EEL3080 Data Communication Networks | ELECTRONICS Dept. | slot D
+ 12. EEP3020 Digital Systems Lab | ELECTRONICS Dept. | slot M1, M2
+ 13. EEP3010 Communication Systems Lab | ELECTRONICS Dept. | slot M1, M2
+ 14. EEL7140 Advanced Control System | Saurav Kumar | slot F
+ 15. EEL7300 Computational Methods in Power System Analysis | Vineeth V | slot I
+ 16. EEL7700 Electric Drive Systems | Nishant Kumar | slot G
+ 17. EEL71720 Power Electronic Converters | Kunwar Aditya | slot H
+ 18. EEP7140 Integrated Power and Drives Laboratory | Ravi Yadav | slot L9
+ 19. EEL7080 Introduction to CyberPhysical Systems | Niladri Sekhar Tripathy | slot H
+ 20. EEL7150 Embedded System Design | Deepak Fulwani | slot G
+ 21. EEL7200 Data Communication and Networking | ELECTRONICS Dept. | slot I
+ 22. EEL7XXX Optimization Methods for Power System | Vineeth V | slot K
+ 23. EEL7XXX Control Techniques in Power Engineering | Kunwar Aditya | slot I
+ 24. EEL7XXX Modern Power System Operation and Control | Ravi Yadav | slot I
+ 25. EEL7340 Power System Protection | Bandi Ravi Kumar | slot N
+ 26. EEL7220 Renewable Energy Systems | Abdul Gafoor Shaik | slot J
+ 27. EEL7030 Advanced Digital Signal Processing | Sandeep Yadav | slot J
+ 28. RML7220 Mobile Robots | Riby Abraham Boby | slot H
+ 29. MEL7080 Robotics | Roshan Kumar Hota | slot G
+ 30. RML7310 Networked Dynamical Systems and Control | Anoop Jain | slot K
+ 31. EEL7XXX Optimization Techniques for Signal Representation and Processing | Himanshu Kumar | slot N
+ 32. EEL1010 Introduction to Electrical Engineering | Deepak Fulwani | slot U, M6 (Tentative)
+ 33. EEL7009 Applied Linear Algebra | Vineeth V | slot N
+
+Source: electrical.csv",academic_helpdesk,list_courses,False,True,,True,True,True,True,False,electrical.csv,electrical.csv,5.68,
+2,E01,email,Write an email to the course instructor of CSL7650 that I need leave for 2 days,"Draft is ready to review and was NOT sent.
+
+Source: draft_email.py
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: gaurav.harit@iitj.example
+Subject: Leave application for 2 days - CSL7650 Autonomous Systems (AI+X)
+
+Dear Prof. Gaurav Harit,
+
+I am writing to inform you that I will not be able to attend the classes of CSL7650 Autonomous Systems (AI+X) for 2 days due to [reason]. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,,cse.csv;faculty_contacts.csv,5.05,
+2,E02,email,What is the email ID of the instructor of Autonomous Systems?,"The email ID of the instructor of Autonomous Systems is gaurav.harit@iitj.example. 
+Source: cse.csv",academic_helpdesk,lookup_instructor_email,False,True,,,,,True,False,cse.csv,cse.csv;faculty_contacts.csv,4.95,
+2,E03,email,Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.,"The draft email is ready to review and was NOT sent.
+
+Source: cse.csv, faculty_contacts.csv
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: susil.kumar.mohanty@iitj.example
+Subject: Request for makeup examination - CSL3030 Operating Systems
+
+Dear Prof. Susil Kumar Mohanty,
+
+I could not appear for the examination ([dates]) due to fever. I kindly request you to permit me to take a makeup examination. I will submit the supporting documents (e.g. medical certificate) as required by the institute rules.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,5.74,
+2,E04,email,I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.,"Draft is ready to review and was NOT sent.
+
+Source: draft_email.py
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: dip.sankar.banerjee@iitj.example
+Subject: Leave application for 3 days - CSL2120 Data Structures and Algorithms
+
+Dear Prof. Dip Sankar Banerjee,
+
+I am writing to inform you that I will not be able to attend the classes of CSL2120 Data Structures and Algorithms for 3 days due to viral fever. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,,cse.csv;faculty_contacts.csv,5.38,
+2,O01,out_of_scope,What are the available dining options on the campus?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,5.31,
+2,O02,out_of_scope,What is the best way to reach the campus from Jodhpur city center?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,5.65,
+2,O03,out_of_scope,What will the weather be like in Jodhpur tomorrow?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,2.48,
+2,O04,out_of_scope,Who won the last cricket world cup?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,1.76,
+2,O05,out_of_scope,Which laptop should I buy for programming?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,1.78,
+2,O06,out_of_scope,What is the timing of the campus gym?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,4.49,
+2,D01,curriculum,Which specializations are offered in the B.Tech. AI & DS program?,"The specializations offered in the B.Tech. AI & DS program are:
+
+1. Visual Computing
+2. Socio-digital realities
+3. Robotics
+4. AIOT
+5. Management specialization with AI and Technology focus (leading to MBA (BTech + MBA dual degree program))
+
+Source: AI&DS curriculum.pdf, p.3 and p.12.",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,AI&DS curriculum.pdf,AI&DS curriculum.pdf,7.82,
+2,D02,curriculum,How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?,"There are 30 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.
+
+Source: B.Tech. in Bioengineering Curriculum.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,B.Tech. in Bioengineering Curriculum.pdf,B.Tech. in Bioengineering Curriculum.pdf,4.65,
+2,D03,curriculum,What is the grand total of credits in the BS in Physics with Specialization program?,"The grand total of credits in the BS in Physics with Specialization program is 69. 
+
+Source: BS in Physics with Specialization Curriculum.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,BS in Physics with Specialization Curriculum.pdf,BS in Physics with Specialization Curriculum.pdf,6.08,
+2,D04,curriculum,What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?,"The total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program is 56.
+
+Source: Curriculum MTech CPS.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,Curriculum MTech CPS.pdf,Curriculum MTech CPS.pdf,5.49,
+2,D05,curriculum,How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?,"The B.Tech. Project SS499 in the B.Tech. Systems Science curriculum is 22 credits.
+
+Source: Curriculum for B.Tech. Programs.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,Curriculum for B.Tech. Programs.pdf,Curriculum for B.Tech. Programs.pdf,5.11,
+2,D06,curriculum,How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?,"The B.Tech. Electronics Engineering curriculum has 90 Programme Core credits. 
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,EE curriculum.pdf,EE curriculum.pdf,4.3,
+2,D07,curriculum,What is the total number of credits in the Integrated Teacher Education Program (ITEP)?,"The total number of credits in the Integrated Teacher Education Program (ITEP) is 176. 
+
+Source: Integrated Teacher Education Program (ITEP) Curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,Integrated Teacher Education Program (ITEP) Curriculum.pdf,Integrated Teacher Education Program (ITEP) Curriculum.pdf,5.19,
+2,D08,curriculum,What is the total credit requirement of the M.Sc. Mathematics program?,"The total credit requirement of the M.Sc. Mathematics program is 38. 
+
+Source: M.Sc. Mathematics course booklet.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,M.Sc. Mathematics course booklet.pdf,M.Sc. Mathematics course booklet.pdf;academic_regulations.pdf,4.98,
+2,D09,curriculum,What is the grand total of credits in the M.Tech. Data and Computational Sciences program?,"The grand total of credits in the M.Tech. Data and Computational Sciences program is 108. 
+
+Source: MTech Structure.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,MTech Structure.pdf,MTech Structure.pdf,4.61,
+3,P01,policy,What is the attendance requirement to sit in the Major exam?,"The attendance requirement to sit in the Major exam is 75%. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,True,,True,True,False,True,False,academic_regulations.pdf,academic_regulations.pdf;attendance_policy.pdf,5.26,
+3,P02,policy,How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?,"You need to earn 12 Open Elective credits to get a B.Tech. Degree.
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,EE curriculum.pdf,EE curriculum.pdf,4.77,
+3,P03,policy,What is the total number of credits required for the B.Tech. degree?,"The total number of credits required for the B.Tech. degree is 180.
+
+Source: Curriculum for B.Tech. Programs.pdf",academic_helpdesk,search_documents,False,,,True,True,False,True,False,Curriculum for B.Tech. Programs.pdf,Curriculum for B.Tech. Programs.pdf;academic_regulations.pdf,5.74,
+3,P04,policy,What happens if my attendance in a course is below the required minimum?,"If your attendance in a course is below the required minimum, you will be allowed to appear for the exams, but you will be required to score at least a C grade to pass the course. If your marks are lower than the cut-off for a C grade, you will be awarded an F grade.
+
+Source: attendance_policy.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,attendance_policy.pdf,academic_regulations.pdf;attendance_policy.pdf,6.94,
+3,P05,policy,What is the procedure to apply for a makeup examination?,"The procedure to apply for a makeup examination is as follows: a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. Alternatively, a student can consult with the Dean of Academics, who may permit the student to appear for a make-up examination any day before the end of the first week of the next semester.
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,8.78,
+3,P06,policy,How many grade points does an A grade carry?,"An A grade carries 10 grade points.
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,3.9,
+3,P07,policy,What is the minimum CGPA below which a student is put on academic probation?,"The minimum CGPA below which a student is put on academic probation is 5.0. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,,True,False,academic_regulations.pdf,academic_regulations.pdf,4.99,
+3,P08,policy,What is the maximum number of credits a student can register for in a semester?,"The maximum number of credits a student can register for in a semester is 24 for M.Sc. students, and 25 for undergraduate students. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,academic_regulations.pdf,5.52,
+3,P09,policy,Can a B.Tech. student register for a 700 level (PG) course?,"A B.Tech. student cannot register for a 700 level (PG) course. 
+
+Source: academic_regulations.pdf",academic_helpdesk,search_documents,False,,,True,True,True,True,False,academic_regulations.pdf,Curriculum for B.Tech. Programs.pdf;EE curriculum.pdf;academic_regulations.pdf,3.85,
+3,S01,schedule,What is the slot for the course Autonomous Systems?,"The slot for the course Autonomous Systems is E. 
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,3.42,
+3,S02,schedule,Who is the instructor of CSL7650?,"The instructor of CSL7650 is Gaurav Harit. 
+
+Source: cse.csv, faculty_contacts.csv",academic_helpdesk,lookup_instructor_email,False,True,,True,True,True,False,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,4.71,
+3,S03,schedule,In which slot is CSL3030 offered?,"CSL3030 is offered in slot B. 
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.15,
+3,S04,schedule,How many credits is the course Autonomous Systems?,"The course ""Autonomous Systems"" has 3 credits.
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.18,
+3,S05,schedule,When do the Major exams start this semester?,"The Major exams start this semester after the midpoint, and the exact date will be provided by the office of Academics.
+
+Source: exams_policy.pdf",academic_helpdesk,search_documents,False,,,True,True,,True,False,exams_policy.pdf,academic_regulations.pdf;exams_policy.pdf,4.65,
+3,S06,schedule,At what time is the Autonomous Systems class held?,"The Autonomous Systems class is held on Tuesdays, Thursdays, and Fridays from 11:00-11:50 in slot E.
+
+Source: cse.csv",academic_helpdesk,lookup_course,False,True,,True,True,True,True,False,cse.csv,cse.csv,4.04,
+3,C01,count,How many 400 level electives have been floated by the Humanities department in this semester?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,list_courses;log_unanswered_question,True,,,,,,True,False,,humanities.csv,5.38,
+3,C02,count,How many elective courses are offered by the Computer Science department this semester?,"There are 5 elective courses offered by the Computer Science department this semester:
+
+  1. CSL7360 Computer Vision | Deepak Mishra | slot I
+  2. CSL7150 Cybersecurity | Susil Kumar Mohanty | slot J
+  3. CSL7350 Selected Topics in AI | Navchetan Awasthi
+  4. CSL7460 Mobile and Pervasive Computing | Suchetana Chakraborty
+  5. CSL7860 Foundation Models and Generative AI | Angshuman Paul
+
+Source: cse.csv",academic_helpdesk,list_courses,False,True,,True,True,True,True,False,cse.csv,cse.csv,5.03,
+3,C03,count,How many courses has the Electrical Engineering department floated this semester?,"There are 33 courses floated by the Electrical Engineering department this semester:
+
+  1. EEL2040 Engineering Electromagnetics | Bharat Singh Rajpurohit | slot E
+  2. EEL2XXX Digital Design | Payal Vyankat Dahiwale | slot A
+  3. EEL2XXX Engineering Optimization | Rajendra Nagar | slot B
+  4. EEL3020 Electrical Machines | Abdul Gafoor Shaik | slot D
+  5. EEL2XXX Statistical Inference and Modeling | Manish Narwaria | slot C
+  6. EEP2XXX Electrical Engineering Lab I | Rajendra Nagar, Kunwar, Bharat Singh Rajpurohit, Payal Vyankat Dahiwale | slot M3, M4, M5
+  7. EEL3060 Power Engineering | Bandi Ravi Kumar | slot E, M7, M10
+  8. EEL3070 Digital Signal Processing | Amit Bhardwaj | slot B
+  9. EEP3030 Electrical Machines Lab | Abdul Gafoor Shaik, Bharat Singh Rajpurohit | slot M1, M7, M9
+ 10. EEL3090 Embedded Systems | Bhivraj Suthar, Niladri Sekhar Tripathy | slot C
+ 11. EEL3080 Data Communication Networks | ELECTRONICS Dept. | slot D
+ 12. EEP3020 Digital Systems Lab | ELECTRONICS Dept. | slot M1, M2
+ 13. EEP3010 Communication Systems Lab | ELECTRONICS Dept. | slot M1, M2
+ 14. EEL7140 Advanced Control System | Saurav Kumar | slot F
+ 15. EEL7300 Computational Methods in Power System Analysis | Vineeth V | slot I
+ 16. EEL7700 Electric Drive Systems | Nishant Kumar | slot G
+ 17. EEL71720 Power Electronic Converters | Kunwar Aditya | slot H
+ 18. EEP7140 Integrated Power and Drives Laboratory | Ravi Yadav | slot L9
+ 19. EEL7080 Introduction to CyberPhysical Systems | Niladri Sekhar Tripathy | slot H
+ 20. EEL7150 Embedded System Design | Deepak Fulwani | slot G
+ 21. EEL7200 Data Communication and Networking | ELECTRONICS Dept. | slot I
+ 22. EEL7XXX Optimization Methods for Power System | Vineeth V | slot K
+ 23. EEL7XXX Control Techniques in Power Engineering | Kunwar Aditya | slot I
+ 24. EEL7XXX Modern Power System Operation and Control | Ravi Yadav | slot I
+ 25. EEL7340 Power System Protection | Bandi Ravi Kumar | slot N
+ 26. EEL7220 Renewable Energy Systems | Abdul Gafoor Shaik | slot J
+ 27. EEL7030 Advanced Digital Signal Processing | Sandeep Yadav | slot J
+ 28. RML7220 Mobile Robots | Riby Abraham Boby | slot H
+ 29. MEL7080 Robotics | Roshan Kumar Hota | slot G
+ 30. RML7310 Networked Dynamical Systems and Control | Anoop Jain | slot K
+ 31. EEL7XXX Optimization Techniques for Signal Representation and Processing | Himanshu Kumar | slot N
+ 32. EEL1010 Introduction to Electrical Engineering | Deepak Fulwani | slot U, M6 (Tentative)
+ 33. EEL7009 Applied Linear Algebra | Vineeth V | slot N
+
+Source: electrical.csv",academic_helpdesk,list_courses,False,True,,True,True,True,True,False,electrical.csv,electrical.csv,5.49,
+3,E01,email,Write an email to the course instructor of CSL7650 that I need leave for 2 days,"Draft is ready to review and was NOT sent.
+
+Source: draft_email.py
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: gaurav.harit@iitj.example
+Subject: Leave application for 2 days - CSL7650 Autonomous Systems (AI+X)
+
+Dear Prof. Gaurav Harit,
+
+I am writing to inform you that I will not be able to attend the classes of CSL7650 Autonomous Systems (AI+X) for 2 days due to [reason]. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,,cse.csv;faculty_contacts.csv,4.32,
+3,E02,email,What is the email ID of the instructor of Autonomous Systems?,"The email ID of the instructor of Autonomous Systems is gaurav.harit@iitj.example.
+
+Source: cse.csv, faculty_contacts.csv",academic_helpdesk,lookup_instructor_email,False,True,,,,,True,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,5.35,
+3,E03,email,Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.,"Draft is ready to review and was NOT sent.
+
+Source: cse.csv, faculty_contacts.csv
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: susil.kumar.mohanty@iitj.example
+Subject: Request for makeup examination - CSL3030 Operating Systems
+
+Dear Prof. Susil Kumar Mohanty,
+
+I could not appear for the examination ([dates]) due to fever. I kindly request you to permit me to take a makeup examination. I will submit the supporting documents (e.g. medical certificate) as required by the institute rules.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,cse.csv;faculty_contacts.csv,cse.csv;faculty_contacts.csv,5.68,
+3,E04,email,I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.,"Draft is ready to review and was NOT sent.
+
+Source: draft_email.py
+
+----- EMAIL DRAFT (DRAFT - not sent) -----
+To: dip.sankar.banerjee@iitj.example
+Subject: Leave application for 3 days - CSL2120 Data Structures and Algorithms
+
+Dear Prof. Dip Sankar Banerjee,
+
+I am writing to inform you that I will not be able to attend the classes of CSL2120 Data Structures and Algorithms for 3 days due to viral fever. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.
+
+Thank you for your consideration.
+
+Regards,
+[Your Name]
+[Roll Number]
+[Program, Year]
+----------------------------------------",academic_helpdesk,draft_email,False,True,,,,,True,False,,cse.csv;faculty_contacts.csv,5.63,
+3,O01,out_of_scope,What are the available dining options on the campus?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,4.95,
+3,O02,out_of_scope,What is the best way to reach the campus from Jodhpur city center?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,5.79,
+3,O03,out_of_scope,What will the weather be like in Jodhpur tomorrow?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,2.5,
+3,O04,out_of_scope,Who won the last cricket world cup?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,1.78,
+3,O05,out_of_scope,Which laptop should I buy for programming?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,1.75,
+3,O06,out_of_scope,What is the timing of the campus gym?,I don't know the answer to this based on the available academic documents.,academic_helpdesk,log_unanswered_question,True,,,,,,True,False,,,4.54,
+3,D01,curriculum,Which specializations are offered in the B.Tech. AI & DS program?,"The specializations offered in the B.Tech. AI & DS program are:
+
+1. Visual Computing
+2. Socio-digital realities
+3. Robotics
+4. AIOT
+5. Management specialization with AI and Technology focus (leading to MBA (BTech + MBA dual degree program))
+
+Source: AI&DS curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,AI&DS curriculum.pdf,AI&DS curriculum.pdf,7.24,
+3,D02,curriculum,How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?,"There are 30 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.
+
+Source: B.Tech. in Bioengineering Curriculum.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,B.Tech. in Bioengineering Curriculum.pdf,B.Tech. in Bioengineering Curriculum.pdf,4.82,
+3,D03,curriculum,What is the grand total of credits in the BS in Physics with Specialization program?,"Source: BS in Physics with Specialization Curriculum.pdf
+
+The grand total of credits in the BS in Physics with Specialization program is not explicitly mentioned in the provided document.",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,BS in Physics with Specialization Curriculum.pdf,BS in Physics with Specialization Curriculum.pdf,6.18,
+3,D04,curriculum,What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?,"The total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program is 56.
+
+Source: Curriculum MTech CPS.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,Curriculum MTech CPS.pdf,Curriculum MTech CPS.pdf,6.44,
+3,D05,curriculum,How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?,"The B.Tech. Project SS499 in the B.Tech. Systems Science curriculum is worth 22 credits.
+
+Source: Curriculum for B.Tech. Programs.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,Curriculum for B.Tech. Programs.pdf,Curriculum for B.Tech. Programs.pdf,6.17,
+3,D06,curriculum,How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?,"The B.Tech. Electronics Engineering curriculum has 90 Programme Core credits. 
+
+Source: EE curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,EE curriculum.pdf,EE curriculum.pdf,4.39,
+3,D07,curriculum,What is the total number of credits in the Integrated Teacher Education Program (ITEP)?,"The total number of credits in the Integrated Teacher Education Program (ITEP) is 176. 
+
+Source: Integrated Teacher Education Program (ITEP) Curriculum.pdf",academic_helpdesk,search_documents,False,True,,True,True,True,True,False,Integrated Teacher Education Program (ITEP) Curriculum.pdf,Integrated Teacher Education Program (ITEP) Curriculum.pdf,5.3,
+3,D08,curriculum,What is the total credit requirement of the M.Sc. Mathematics program?,"The total credit requirement of the M.Sc. Mathematics program is 38. 
+
+Source: M.Sc. Mathematics course booklet.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,M.Sc. Mathematics course booklet.pdf,M.Sc. Mathematics course booklet.pdf;academic_regulations.pdf,5.23,
+3,D09,curriculum,What is the grand total of credits in the M.Tech. Data and Computational Sciences program?,"The grand total of credits in the M.Tech. Data and Computational Sciences program is 90. 
+
+Source: MTech Structure.pdf",academic_helpdesk,search_documents,False,False,,True,True,True,True,False,MTech Structure.pdf,MTech Structure.pdf,5.19,

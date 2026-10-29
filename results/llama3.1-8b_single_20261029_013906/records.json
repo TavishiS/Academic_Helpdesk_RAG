@@ -1,0 +1,4118 @@
+{
+  "records": [
+    {
+      "run": 1,
+      "id": "P01",
+      "category": "policy",
+      "question": "What is the attendance requirement to sit in the Major exam?",
+      "answer": "The attendance requirement to sit in the Major exam is 75%. \n\nSource: attendance_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "attendance requirement major exam"
+          }
+        }
+      ],
+      "latency_s": 66.59,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "attendance_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "attendance_policy.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P02",
+      "category": "policy",
+      "question": "How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?",
+      "answer": "You need to earn 12 Open Elective credits to get a B.Tech. Degree.\n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. degree open elective credits"
+          }
+        }
+      ],
+      "latency_s": 5.46,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "EE curriculum.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P03",
+      "category": "policy",
+      "question": "What is the total number of credits required for the B.Tech. degree?",
+      "answer": "The total number of credits required for the B.Tech. degree is 180.\n\nSource: Curriculum for B.Tech. Programs.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. degree credits"
+          }
+        }
+      ],
+      "latency_s": 5.61,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P04",
+      "category": "policy",
+      "question": "What happens if my attendance in a course is below the required minimum?",
+      "answer": "If your attendance in a course is below the required minimum, you will be allowed to appear for the exams, but you will be required to score at least a C grade to pass the course. If your marks are lower than the cut-off for a C grade, you will be awarded an F grade.\n\nSource: attendance_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "attendance requirement major exam"
+          }
+        }
+      ],
+      "latency_s": 8.15,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "attendance_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "attendance_policy.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P05",
+      "category": "policy",
+      "question": "What is the procedure to apply for a makeup examination?",
+      "answer": "The procedure to apply for a makeup examination is as follows: a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. Alternatively, the student can consult with the Dean of Academics, who may permit the student to appear for a make-up examination any day before the end of the first week of the next semester.\n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "makeup examination procedure"
+          }
+        }
+      ],
+      "latency_s": 8.88,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P06",
+      "category": "policy",
+      "question": "How many grade points does an A grade carry?",
+      "answer": "The grade point for an A grade is 10. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grade points for A grade"
+          }
+        }
+      ],
+      "latency_s": 4.38,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P07",
+      "category": "policy",
+      "question": "What is the minimum CGPA below which a student is put on academic probation?",
+      "answer": "The minimum CGPA below which a student is put on academic probation is 5.0. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "minimum CGPA for academic probation"
+          }
+        }
+      ],
+      "latency_s": 5.19,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P08",
+      "category": "policy",
+      "question": "What is the maximum number of credits a student can register for in a semester?",
+      "answer": "The maximum number of credits a student can register for in a semester is 25. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "maximum credits registration"
+          }
+        }
+      ],
+      "latency_s": 4.72,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "P09",
+      "category": "policy",
+      "question": "Can a B.Tech. student register for a 700 level (PG) course?",
+      "answer": "A B.Tech. student cannot register for a 700 level (PG) course.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. student registration 700 level course"
+          }
+        }
+      ],
+      "latency_s": 4.92,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": false,
+      "citation_valid": false,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf",
+        "EE curriculum.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "S01",
+      "category": "schedule",
+      "question": "What is the slot for the course Autonomous Systems?",
+      "answer": "The slot for the course Autonomous Systems is E. \n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 3.46,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "S02",
+      "category": "schedule",
+      "question": "Who is the instructor of CSL7650?",
+      "answer": "The instructor of CSL7650 is Gaurav Harit. \n\nSource: cse.csv, faculty_contacts.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_instructor_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_instructor_email",
+          "args": {
+            "course_code": "CSL7650"
+          }
+        }
+      ],
+      "latency_s": 4.72,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": false,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "S03",
+      "category": "schedule",
+      "question": "In which slot is CSL3030 offered?",
+      "answer": "The course CSL3030 is offered in slot B. \n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "CSL3030"
+          }
+        }
+      ],
+      "latency_s": 4.31,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "S04",
+      "category": "schedule",
+      "question": "How many credits is the course Autonomous Systems?",
+      "answer": "The course Autonomous Systems is worth 3 credits. \n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.19,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "S05",
+      "category": "schedule",
+      "question": "When do the Major exams start this semester?",
+      "answer": "The Major exams for this semester will start at the end of the semester.\n\nSource: exams_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "Major exam start semester"
+          }
+        }
+      ],
+      "latency_s": 4.72,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "exams_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "exams_policy.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "S06",
+      "category": "schedule",
+      "question": "At what time is the Autonomous Systems class held?",
+      "answer": "The Autonomous Systems class is held on Tuesdays, Thursdays, and Fridays from 11:00-11:50 AM.\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.22,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "C01",
+      "category": "count",
+      "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses",
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "Humanities",
+            "level": "4",
+            "course_type": "elective"
+          }
+        },
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 5.17,
+      "error": "",
+      "refused": true,
+      "correct_refusal": null,
+      "false_refusal": true,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "humanities.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "C02",
+      "category": "count",
+      "question": "How many elective courses are offered by the Computer Science department this semester?",
+      "answer": "The Computer Science department is offering 5 elective courses this semester:\n\n  1. CSL7360 Computer Vision | Deepak Mishra | slot I\n  2. CSL7150 Cybersecurity | Susil Kumar Mohanty | slot J\n  3. CSL7350 Selected Topics in AI | Navchetan Awasthi\n  4. CSL7460 Mobile and Pervasive Computing | Suchetana Chakraborty\n  5. CSL7860 Foundation Models and Generative AI | Angshuman Paul\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "CSE",
+            "level": "",
+            "course_type": "elective"
+          }
+        }
+      ],
+      "latency_s": 4.87,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "C03",
+      "category": "count",
+      "question": "How many courses has the Electrical Engineering department floated this semester?",
+      "answer": "There are 33 courses floated by the Electrical Engineering department this semester:\n\n  1. EEL2040 Engineering Electromagnetics | Bharat Singh Rajpurohit | slot E\n  2. EEL2XXX Digital Design | Payal Vyankat Dahiwale | slot A\n  3. EEL2XXX Engineering Optimization | Rajendra Nagar | slot B\n  4. EEL3020 Electrical Machines | Abdul Gafoor Shaik | slot D\n  5. EEL2XXX Statistical Inference and Modeling | Manish Narwaria | slot C\n  6. EEP2XXX Electrical Engineering Lab I | Rajendra Nagar, Kunwar, Bharat Singh Rajpurohit, Payal Vyankat Dahiwale | slot M3, M4, M5\n  7. EEL3060 Power Engineering | Bandi Ravi Kumar | slot E, M7, M10\n  8. EEL3070 Digital Signal Processing | Amit Bhardwaj | slot B\n  9. EEP3030 Electrical Machines Lab | Abdul Gafoor Shaik, Bharat Singh Rajpurohit | slot M1, M7, M9\n 10. EEL3090 Embedded Systems | Bhivraj Suthar, Niladri Sekhar Tripathy | slot C\n 11. EEL3080 Data Communication Networks | ELECTRONICS Dept. | slot D\n 12. EEP3020 Digital Systems Lab | ELECTRONICS Dept. | slot M1, M2\n 13. EEP3010 Communication Systems Lab | ELECTRONICS Dept. | slot M1, M2\n 14. EEL7140 Advanced Control System | Saurav Kumar | slot F\n 15. EEL7300 Computational Methods in Power System Analysis | Vineeth V | slot I\n 16. EEL7700 Electric Drive Systems | Nishant Kumar | slot G\n 17. EEL71720 Power Electronic Converters | Kunwar Aditya | slot H\n 18. EEP7140 Integrated Power and Drives Laboratory | Ravi Yadav | slot L9\n 19. EEL7080 Introduction to CyberPhysical Systems | Niladri Sekhar Tripathy | slot H\n 20. EEL7150 Embedded System Design | Deepak Fulwani | slot G\n 21. EEL7200 Data Communication and Networking | ELECTRONICS Dept. | slot I\n 22. EEL7XXX Optimization Methods for Power System | Vineeth V | slot K\n 23. EEL7XXX Control Techniques in Power Engineering | Kunwar Aditya | slot I\n 24. EEL7XXX Modern Power System Operation and Control | Ravi Yadav | slot I\n 25. EEL7340 Power System Protection | Bandi Ravi Kumar | slot N\n 26. EEL7220 Renewable Energy Systems | Abdul Gafoor Shaik | slot J\n 27. EEL7030 Advanced Digital Signal Processing | Sandeep Yadav | slot J\n 28. RML7220 Mobile Robots | Riby Abraham Boby | slot H\n 29. MEL7080 Robotics | Roshan Kumar Hota | slot G\n 30. RML7310 Networked Dynamical Systems and Control | Anoop Jain | slot K\n 31. EEL7XXX Optimization Techniques for Signal Representation and Processing | Himanshu Kumar | slot N\n 32. EEL1010 Introduction to Electrical Engineering | Deepak Fulwani | slot U, M6 (Tentative)\n 33. EEL7009 Applied Linear Algebra | Vineeth V | slot N\n\nSource: electrical.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "Electrical",
+            "level": "",
+            "course_type": ""
+          }
+        }
+      ],
+      "latency_s": 5.52,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "electrical.csv"
+      ],
+      "retrieved_sources": [
+        "electrical.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "E01",
+      "category": "email",
+      "question": "Write an email to the course instructor of CSL7650 that I need leave for 2 days",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: draft_email.py\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: gaurav.harit@iitj.example\nSubject: Leave application for 2 days - CSL7650 Autonomous Systems (AI+X)\n\nDear Prof. Gaurav Harit,\n\nI am writing to inform you that I will not be able to attend the classes of CSL7650 Autonomous Systems (AI+X) for 2 days due to [reason]. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "dates": "2 days",
+            "course_code": "CSL7650",
+            "request_type": "leave",
+            "reason": ""
+          }
+        }
+      ],
+      "latency_s": 4.83,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "E02",
+      "category": "email",
+      "question": "What is the email ID of the instructor of Autonomous Systems?",
+      "answer": "The email ID of the instructor of Autonomous Systems is gaurav.harit@iitj.example.\n\nSource: cse.csv, faculty_contacts.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_instructor_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_instructor_email",
+          "args": {
+            "course_code": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 5.1,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "E03",
+      "category": "email",
+      "question": "Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: cse.csv, faculty_contacts.csv\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: susil.kumar.mohanty@iitj.example\nSubject: Request for makeup examination - CSL3030 Operating Systems\n\nDear Prof. Susil Kumar Mohanty,\n\nI could not appear for the examination ([dates]) due to fever. I kindly request you to permit me to take a makeup examination. I will submit the supporting documents (e.g. medical certificate) as required by the institute rules.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "dates": "",
+            "course_code": "CSL3030",
+            "request_type": "makeup",
+            "reason": "fever"
+          }
+        }
+      ],
+      "latency_s": 5.79,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "E04",
+      "category": "email",
+      "question": "I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: draft_email.py\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: dip.sankar.banerjee@iitj.example\nSubject: Leave application for 3 days - CSL2120 Data Structures and Algorithms\n\nDear Prof. Dip Sankar Banerjee,\n\nI am writing to inform you that I will not be able to attend the classes of CSL2120 Data Structures and Algorithms for 3 days due to viral fever. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "request_type": "leave",
+            "reason": "viral fever",
+            "course_code": "DSA",
+            "dates": "3 days"
+          }
+        }
+      ],
+      "latency_s": 5.75,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "O01",
+      "category": "out_of_scope",
+      "question": "What are the available dining options on the campus?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What are the available dining options on the campus?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 5.04,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 1,
+      "id": "O02",
+      "category": "out_of_scope",
+      "question": "What is the best way to reach the campus from Jodhpur city center?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What is the best way to reach the campus from Jodhpur city center?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 6.1,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 1,
+      "id": "O03",
+      "category": "out_of_scope",
+      "question": "What will the weather be like in Jodhpur tomorrow?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What will the weather be like in Jodhpur tomorrow?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 2.48,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 1,
+      "id": "O04",
+      "category": "out_of_scope",
+      "question": "Who won the last cricket world cup?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "Who won the last cricket world cup?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 2.63,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 1,
+      "id": "O05",
+      "category": "out_of_scope",
+      "question": "Which laptop should I buy for programming?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "Which laptop should I buy for programming?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 1.58,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 1,
+      "id": "O06",
+      "category": "out_of_scope",
+      "question": "What is the timing of the campus gym?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What is the timing of the campus gym?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 4.49,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 1,
+      "id": "D01",
+      "category": "curriculum",
+      "question": "Which specializations are offered in the B.Tech. AI & DS program?",
+      "answer": "The specializations offered in the B.Tech. AI & DS program are:\n\n1. Visual Computing\n2. Socio-digital realities\n3. Robotics\n4. AIOT\n5. Management specialization with AI and Technology focus (leading to MBA (BTech + MBA dual degree program))\n\nSource: AI&DS curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. AI & DS specializations"
+          }
+        }
+      ],
+      "latency_s": 8.04,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "AI&DS curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "AI&DS curriculum.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D02",
+      "category": "curriculum",
+      "question": "How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?",
+      "answer": "There are 18 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.\n\nSource: B.Tech. in Bioengineering Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Bioengineering Programme Elective credits"
+          }
+        }
+      ],
+      "latency_s": 5.45,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "B.Tech. in Bioengineering Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "B.Tech. in Bioengineering Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D03",
+      "category": "curriculum",
+      "question": "What is the grand total of credits in the BS in Physics with Specialization program?",
+      "answer": "The grand total of credits in the BS in Physics with Specialization program is 29. \n\nSource: BS in Physics with Specialization Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "BS in Physics with Specialization program credits"
+          }
+        }
+      ],
+      "latency_s": 5.58,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "BS in Physics with Specialization Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "BS in Physics with Specialization Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D04",
+      "category": "curriculum",
+      "question": "What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?",
+      "answer": "The total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program is 56.\n\nSource: Curriculum MTech CPS.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "credits M.Tech. Cyber-Physical Systems (CPS) program"
+          }
+        }
+      ],
+      "latency_s": 6.14,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum MTech CPS.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum MTech CPS.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D05",
+      "category": "curriculum",
+      "question": "How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?",
+      "answer": "The B.Tech. Project SS499 in the B.Tech. Systems Science curriculum is 22 credits.\n\nSource: Curriculum for B.Tech. Programs.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Project SS499 credits B.Tech. Systems Science curriculum"
+          }
+        }
+      ],
+      "latency_s": 5.76,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D06",
+      "category": "curriculum",
+      "question": "How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?",
+      "answer": "The B.Tech. Electronics Engineering curriculum has 90 Programme Core credits. \n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Electronics Engineering Programme Core credits"
+          }
+        }
+      ],
+      "latency_s": 4.92,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "EE curriculum.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D07",
+      "category": "curriculum",
+      "question": "What is the total number of credits in the Integrated Teacher Education Program (ITEP)?",
+      "answer": "The total number of credits in the Integrated Teacher Education Program (ITEP) is 176. \n\nSource: Integrated Teacher Education Program (ITEP) Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "ITEP total credits"
+          }
+        }
+      ],
+      "latency_s": 5.39,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D08",
+      "category": "curriculum",
+      "question": "What is the total credit requirement of the M.Sc. Mathematics program?",
+      "answer": "The total credit requirement of the M.Sc. Mathematics program is not explicitly mentioned in the search results. However, the course booklet mentions that the program is designed to maintain a balance between theoretical analysis and practical applications of mathematics, and that the core courses establish a solid foundation in fundamental mathematical concepts while enhancing the analytical capabilities of students. \n\nSource: M.Sc. Mathematics course booklet.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "M.Sc. Mathematics total credit requirement"
+          }
+        }
+      ],
+      "latency_s": 8.76,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "M.Sc. Mathematics course booklet.pdf"
+      ],
+      "retrieved_sources": [
+        "M.Sc. Mathematics course booklet.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 1,
+      "id": "D09",
+      "category": "curriculum",
+      "question": "What is the grand total of credits in the M.Tech. Data and Computational Sciences program?",
+      "answer": "The grand total of credits in the M.Tech. Data and Computational Sciences program is 108. \n\nSource: MTech Structure.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grand total credits M.Tech. Data and Computational Sciences program"
+          }
+        }
+      ],
+      "latency_s": 5.12,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "MTech Structure.pdf"
+      ],
+      "retrieved_sources": [
+        "MTech Structure.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P01",
+      "category": "policy",
+      "question": "What is the attendance requirement to sit in the Major exam?",
+      "answer": "The attendance requirement to sit in the Major exam is 75%. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "attendance requirement major exam"
+          }
+        }
+      ],
+      "latency_s": 5.54,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "attendance_policy.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P02",
+      "category": "policy",
+      "question": "How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?",
+      "answer": "You need to earn 12 Open Elective credits to get a B.Tech. Degree.\n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. degree open elective credits"
+          }
+        }
+      ],
+      "latency_s": 5.11,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "EE curriculum.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P03",
+      "category": "policy",
+      "question": "What is the total number of credits required for the B.Tech. degree?",
+      "answer": "The total number of credits required for the B.Tech. degree is 180.\n\nSource: Curriculum for B.Tech. Programs.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. degree credits"
+          }
+        }
+      ],
+      "latency_s": 5.08,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P04",
+      "category": "policy",
+      "question": "What happens if my attendance in a course is below the required minimum?",
+      "answer": "If your attendance in a course is below the required minimum of 75%, you will be allowed to appear for the exams, but you will be required to score at least a C grade to pass the course. If your marks are lower than the cut-off for a C grade, you will be awarded an F grade.\n\nSource: attendance_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "attendance requirement major exam"
+          }
+        }
+      ],
+      "latency_s": 7.47,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "attendance_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "attendance_policy.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P05",
+      "category": "policy",
+      "question": "What is the procedure to apply for a makeup examination?",
+      "answer": "To apply for a makeup examination, a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. The student should make an application to the Dean (Academics) through the course instructor within ten days from the date of the examination missed, explaining the reasons for their absence.\n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "makeup examination application procedure"
+          }
+        }
+      ],
+      "latency_s": 8.18,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P06",
+      "category": "policy",
+      "question": "How many grade points does an A grade carry?",
+      "answer": "An A grade carries 10 grade points.\n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grade points for A grade"
+          }
+        }
+      ],
+      "latency_s": 4.11,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P07",
+      "category": "policy",
+      "question": "What is the minimum CGPA below which a student is put on academic probation?",
+      "answer": "The minimum CGPA below which a student is put on academic probation is 5.0. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "minimum CGPA for academic probation"
+          }
+        }
+      ],
+      "latency_s": 5.01,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P08",
+      "category": "policy",
+      "question": "What is the maximum number of credits a student can register for in a semester?",
+      "answer": "The maximum number of credits a student can register for in a semester is 25. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "maximum credits registration"
+          }
+        }
+      ],
+      "latency_s": 4.73,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "P09",
+      "category": "policy",
+      "question": "Can a B.Tech. student register for a 700 level (PG) course?",
+      "answer": "A B.Tech. student cannot register for a 700 level (PG) course. \n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. student registration 700 level course"
+          }
+        }
+      ],
+      "latency_s": 4.29,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf",
+        "EE curriculum.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "S01",
+      "category": "schedule",
+      "question": "What is the slot for the course Autonomous Systems?",
+      "answer": "The slot for the course Autonomous Systems is E. \n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 3.42,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "S02",
+      "category": "schedule",
+      "question": "Who is the instructor of CSL7650?",
+      "answer": "The instructor of CSL7650 is Gaurav Harit. \n\nSource: cse.csv, faculty_contacts.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_instructor_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_instructor_email",
+          "args": {
+            "course_code": "CSL7650"
+          }
+        }
+      ],
+      "latency_s": 4.76,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": false,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "S03",
+      "category": "schedule",
+      "question": "In which slot is CSL3030 offered?",
+      "answer": "The course CSL3030 is offered in slot B. \nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "CSL3030"
+          }
+        }
+      ],
+      "latency_s": 4.43,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "S04",
+      "category": "schedule",
+      "question": "How many credits is the course Autonomous Systems?",
+      "answer": "The course Autonomous Systems has 3 credits. \n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.17,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "S05",
+      "category": "schedule",
+      "question": "When do the Major exams start this semester?",
+      "answer": "The Major exams start this semester after the midpoint, and the exact date will be provided by the office of Academics.\n\nSource: exams_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "Major exams start this semester"
+          }
+        }
+      ],
+      "latency_s": 5.78,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "exams_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "exams_policy.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "S06",
+      "category": "schedule",
+      "question": "At what time is the Autonomous Systems class held?",
+      "answer": "The Autonomous Systems class is held on Tuesdays, Thursdays, and Fridays from 11:00-11:50 AM.\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.96,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "C01",
+      "category": "count",
+      "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses",
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "Humanities",
+            "level": "4",
+            "course_type": "elective"
+          }
+        },
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 5.22,
+      "error": "",
+      "refused": true,
+      "correct_refusal": null,
+      "false_refusal": true,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "humanities.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "C02",
+      "category": "count",
+      "question": "How many elective courses are offered by the Computer Science department this semester?",
+      "answer": "There are 5 elective courses offered by the Computer Science department this semester:\n\n  1. CSL7360 Computer Vision | Deepak Mishra | slot I\n  2. CSL7150 Cybersecurity | Susil Kumar Mohanty | slot J\n  3. CSL7350 Selected Topics in AI | Navchetan Awasthi\n  4. CSL7460 Mobile and Pervasive Computing | Suchetana Chakraborty\n  5. CSL7860 Foundation Models and Generative AI | Angshuman Paul\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "CSE",
+            "level": "",
+            "course_type": "elective"
+          }
+        }
+      ],
+      "latency_s": 5.03,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "C03",
+      "category": "count",
+      "question": "How many courses has the Electrical Engineering department floated this semester?",
+      "answer": "There are 33 courses floated by the Electrical Engineering department this semester:\n\n  1. EEL2040 Engineering Electromagnetics | Bharat Singh Rajpurohit | slot E\n  2. EEL2XXX Digital Design | Payal Vyankat Dahiwale | slot A\n  3. EEL2XXX Engineering Optimization | Rajendra Nagar | slot B\n  4. EEL3020 Electrical Machines | Abdul Gafoor Shaik | slot D\n  5. EEL2XXX Statistical Inference and Modeling | Manish Narwaria | slot C\n  6. EEP2XXX Electrical Engineering Lab I | Rajendra Nagar, Kunwar, Bharat Singh Rajpurohit, Payal Vyankat Dahiwale | slot M3, M4, M5\n  7. EEL3060 Power Engineering | Bandi Ravi Kumar | slot E, M7, M10\n  8. EEL3070 Digital Signal Processing | Amit Bhardwaj | slot B\n  9. EEP3030 Electrical Machines Lab | Abdul Gafoor Shaik, Bharat Singh Rajpurohit | slot M1, M7, M9\n 10. EEL3090 Embedded Systems | Bhivraj Suthar, Niladri Sekhar Tripathy | slot C\n 11. EEL3080 Data Communication Networks | ELECTRONICS Dept. | slot D\n 12. EEP3020 Digital Systems Lab | ELECTRONICS Dept. | slot M1, M2\n 13. EEP3010 Communication Systems Lab | ELECTRONICS Dept. | slot M1, M2\n 14. EEL7140 Advanced Control System | Saurav Kumar | slot F\n 15. EEL7300 Computational Methods in Power System Analysis | Vineeth V | slot I\n 16. EEL7700 Electric Drive Systems | Nishant Kumar | slot G\n 17. EEL71720 Power Electronic Converters | Kunwar Aditya | slot H\n 18. EEP7140 Integrated Power and Drives Laboratory | Ravi Yadav | slot L9\n 19. EEL7080 Introduction to CyberPhysical Systems | Niladri Sekhar Tripathy | slot H\n 20. EEL7150 Embedded System Design | Deepak Fulwani | slot G\n 21. EEL7200 Data Communication and Networking | ELECTRONICS Dept. | slot I\n 22. EEL7XXX Optimization Methods for Power System | Vineeth V | slot K\n 23. EEL7XXX Control Techniques in Power Engineering | Kunwar Aditya | slot I\n 24. EEL7XXX Modern Power System Operation and Control | Ravi Yadav | slot I\n 25. EEL7340 Power System Protection | Bandi Ravi Kumar | slot N\n 26. EEL7220 Renewable Energy Systems | Abdul Gafoor Shaik | slot J\n 27. EEL7030 Advanced Digital Signal Processing | Sandeep Yadav | slot J\n 28. RML7220 Mobile Robots | Riby Abraham Boby | slot H\n 29. MEL7080 Robotics | Roshan Kumar Hota | slot G\n 30. RML7310 Networked Dynamical Systems and Control | Anoop Jain | slot K\n 31. EEL7XXX Optimization Techniques for Signal Representation and Processing | Himanshu Kumar | slot N\n 32. EEL1010 Introduction to Electrical Engineering | Deepak Fulwani | slot U, M6 (Tentative)\n 33. EEL7009 Applied Linear Algebra | Vineeth V | slot N\n\nSource: electrical.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "level": "",
+            "course_type": "",
+            "department": "Electrical"
+          }
+        }
+      ],
+      "latency_s": 5.68,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "electrical.csv"
+      ],
+      "retrieved_sources": [
+        "electrical.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "E01",
+      "category": "email",
+      "question": "Write an email to the course instructor of CSL7650 that I need leave for 2 days",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: draft_email.py\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: gaurav.harit@iitj.example\nSubject: Leave application for 2 days - CSL7650 Autonomous Systems (AI+X)\n\nDear Prof. Gaurav Harit,\n\nI am writing to inform you that I will not be able to attend the classes of CSL7650 Autonomous Systems (AI+X) for 2 days due to [reason]. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "request_type": "leave",
+            "reason": "",
+            "course_code": "CSL7650",
+            "dates": "2 days"
+          }
+        }
+      ],
+      "latency_s": 5.05,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "E02",
+      "category": "email",
+      "question": "What is the email ID of the instructor of Autonomous Systems?",
+      "answer": "The email ID of the instructor of Autonomous Systems is gaurav.harit@iitj.example. \nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_instructor_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_instructor_email",
+          "args": {
+            "course_code": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.95,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "E03",
+      "category": "email",
+      "question": "Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.",
+      "answer": "The draft email is ready to review and was NOT sent.\n\nSource: cse.csv, faculty_contacts.csv\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: susil.kumar.mohanty@iitj.example\nSubject: Request for makeup examination - CSL3030 Operating Systems\n\nDear Prof. Susil Kumar Mohanty,\n\nI could not appear for the examination ([dates]) due to fever. I kindly request you to permit me to take a makeup examination. I will submit the supporting documents (e.g. medical certificate) as required by the institute rules.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "reason": "fever",
+            "course_code": "CSL3030",
+            "dates": "",
+            "request_type": "makeup"
+          }
+        }
+      ],
+      "latency_s": 5.74,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "E04",
+      "category": "email",
+      "question": "I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: draft_email.py\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: dip.sankar.banerjee@iitj.example\nSubject: Leave application for 3 days - CSL2120 Data Structures and Algorithms\n\nDear Prof. Dip Sankar Banerjee,\n\nI am writing to inform you that I will not be able to attend the classes of CSL2120 Data Structures and Algorithms for 3 days due to viral fever. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "course_code": "DSA",
+            "dates": "3 days",
+            "request_type": "leave",
+            "reason": "viral fever"
+          }
+        }
+      ],
+      "latency_s": 5.38,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "O01",
+      "category": "out_of_scope",
+      "question": "What are the available dining options on the campus?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What are the available dining options on the campus?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 5.31,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 2,
+      "id": "O02",
+      "category": "out_of_scope",
+      "question": "What is the best way to reach the campus from Jodhpur city center?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What is the best way to reach the campus from Jodhpur city center?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 5.65,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 2,
+      "id": "O03",
+      "category": "out_of_scope",
+      "question": "What will the weather be like in Jodhpur tomorrow?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What will the weather be like in Jodhpur tomorrow?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 2.48,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 2,
+      "id": "O04",
+      "category": "out_of_scope",
+      "question": "Who won the last cricket world cup?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "Who won the last cricket world cup?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 1.76,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 2,
+      "id": "O05",
+      "category": "out_of_scope",
+      "question": "Which laptop should I buy for programming?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "Which laptop should I buy for programming?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 1.78,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 2,
+      "id": "O06",
+      "category": "out_of_scope",
+      "question": "What is the timing of the campus gym?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What is the timing of the campus gym?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 4.49,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 2,
+      "id": "D01",
+      "category": "curriculum",
+      "question": "Which specializations are offered in the B.Tech. AI & DS program?",
+      "answer": "The specializations offered in the B.Tech. AI & DS program are:\n\n1. Visual Computing\n2. Socio-digital realities\n3. Robotics\n4. AIOT\n5. Management specialization with AI and Technology focus (leading to MBA (BTech + MBA dual degree program))\n\nSource: AI&DS curriculum.pdf, p.3 and p.12.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. AI & DS specializations"
+          }
+        }
+      ],
+      "latency_s": 7.82,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "AI&DS curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "AI&DS curriculum.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D02",
+      "category": "curriculum",
+      "question": "How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?",
+      "answer": "There are 30 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.\n\nSource: B.Tech. in Bioengineering Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Bioengineering Programme Elective credits"
+          }
+        }
+      ],
+      "latency_s": 4.65,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "B.Tech. in Bioengineering Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "B.Tech. in Bioengineering Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D03",
+      "category": "curriculum",
+      "question": "What is the grand total of credits in the BS in Physics with Specialization program?",
+      "answer": "The grand total of credits in the BS in Physics with Specialization program is 69. \n\nSource: BS in Physics with Specialization Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grand total of credits BS in Physics with Specialization program"
+          }
+        }
+      ],
+      "latency_s": 6.08,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "BS in Physics with Specialization Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "BS in Physics with Specialization Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D04",
+      "category": "curriculum",
+      "question": "What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?",
+      "answer": "The total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program is 56.\n\nSource: Curriculum MTech CPS.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "M.Tech. Cyber-Physical Systems (CPS) program credits"
+          }
+        }
+      ],
+      "latency_s": 5.49,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum MTech CPS.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum MTech CPS.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D05",
+      "category": "curriculum",
+      "question": "How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?",
+      "answer": "The B.Tech. Project SS499 in the B.Tech. Systems Science curriculum is 22 credits.\n\nSource: Curriculum for B.Tech. Programs.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Project SS499 credits B.Tech. Systems Science curriculum"
+          }
+        }
+      ],
+      "latency_s": 5.11,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D06",
+      "category": "curriculum",
+      "question": "How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?",
+      "answer": "The B.Tech. Electronics Engineering curriculum has 90 Programme Core credits. \n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Electronics Engineering Programme Core credits"
+          }
+        }
+      ],
+      "latency_s": 4.3,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "EE curriculum.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D07",
+      "category": "curriculum",
+      "question": "What is the total number of credits in the Integrated Teacher Education Program (ITEP)?",
+      "answer": "The total number of credits in the Integrated Teacher Education Program (ITEP) is 176. \n\nSource: Integrated Teacher Education Program (ITEP) Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "ITEP total credits"
+          }
+        }
+      ],
+      "latency_s": 5.19,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D08",
+      "category": "curriculum",
+      "question": "What is the total credit requirement of the M.Sc. Mathematics program?",
+      "answer": "The total credit requirement of the M.Sc. Mathematics program is 38. \n\nSource: M.Sc. Mathematics course booklet.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "M.Sc. Mathematics program credit requirement"
+          }
+        }
+      ],
+      "latency_s": 4.98,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "M.Sc. Mathematics course booklet.pdf"
+      ],
+      "retrieved_sources": [
+        "M.Sc. Mathematics course booklet.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 2,
+      "id": "D09",
+      "category": "curriculum",
+      "question": "What is the grand total of credits in the M.Tech. Data and Computational Sciences program?",
+      "answer": "The grand total of credits in the M.Tech. Data and Computational Sciences program is 108. \n\nSource: MTech Structure.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grand total credits M.Tech. Data and Computational Sciences program"
+          }
+        }
+      ],
+      "latency_s": 4.61,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "MTech Structure.pdf"
+      ],
+      "retrieved_sources": [
+        "MTech Structure.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P01",
+      "category": "policy",
+      "question": "What is the attendance requirement to sit in the Major exam?",
+      "answer": "The attendance requirement to sit in the Major exam is 75%. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "attendance requirement major exam"
+          }
+        }
+      ],
+      "latency_s": 5.26,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "attendance_policy.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P02",
+      "category": "policy",
+      "question": "How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?",
+      "answer": "You need to earn 12 Open Elective credits to get a B.Tech. Degree.\n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. degree Open Elective credits"
+          }
+        }
+      ],
+      "latency_s": 4.77,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "EE curriculum.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P03",
+      "category": "policy",
+      "question": "What is the total number of credits required for the B.Tech. degree?",
+      "answer": "The total number of credits required for the B.Tech. degree is 180.\n\nSource: Curriculum for B.Tech. Programs.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. degree credits"
+          }
+        }
+      ],
+      "latency_s": 5.74,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": false,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P04",
+      "category": "policy",
+      "question": "What happens if my attendance in a course is below the required minimum?",
+      "answer": "If your attendance in a course is below the required minimum, you will be allowed to appear for the exams, but you will be required to score at least a C grade to pass the course. If your marks are lower than the cut-off for a C grade, you will be awarded an F grade.\n\nSource: attendance_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "attendance requirement major exam"
+          }
+        }
+      ],
+      "latency_s": 6.94,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "attendance_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "attendance_policy.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P05",
+      "category": "policy",
+      "question": "What is the procedure to apply for a makeup examination?",
+      "answer": "The procedure to apply for a makeup examination is as follows: a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. Alternatively, a student can consult with the Dean of Academics, who may permit the student to appear for a make-up examination any day before the end of the first week of the next semester.\n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "makeup exam procedure"
+          }
+        }
+      ],
+      "latency_s": 8.78,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P06",
+      "category": "policy",
+      "question": "How many grade points does an A grade carry?",
+      "answer": "An A grade carries 10 grade points.\n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grade points for A grade"
+          }
+        }
+      ],
+      "latency_s": 3.9,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P07",
+      "category": "policy",
+      "question": "What is the minimum CGPA below which a student is put on academic probation?",
+      "answer": "The minimum CGPA below which a student is put on academic probation is 5.0. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "minimum CGPA for academic probation"
+          }
+        }
+      ],
+      "latency_s": 4.99,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P08",
+      "category": "policy",
+      "question": "What is the maximum number of credits a student can register for in a semester?",
+      "answer": "The maximum number of credits a student can register for in a semester is 24 for M.Sc. students, and 25 for undergraduate students. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "maximum credits registration semester"
+          }
+        }
+      ],
+      "latency_s": 5.52,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "P09",
+      "category": "policy",
+      "question": "Can a B.Tech. student register for a 700 level (PG) course?",
+      "answer": "A B.Tech. student cannot register for a 700 level (PG) course. \n\nSource: academic_regulations.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. student registration 700 level course"
+          }
+        }
+      ],
+      "latency_s": 3.85,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "academic_regulations.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf",
+        "EE curriculum.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "S01",
+      "category": "schedule",
+      "question": "What is the slot for the course Autonomous Systems?",
+      "answer": "The slot for the course Autonomous Systems is E. \n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 3.42,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "S02",
+      "category": "schedule",
+      "question": "Who is the instructor of CSL7650?",
+      "answer": "The instructor of CSL7650 is Gaurav Harit. \n\nSource: cse.csv, faculty_contacts.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_instructor_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_instructor_email",
+          "args": {
+            "course_code": "CSL7650"
+          }
+        }
+      ],
+      "latency_s": 4.71,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": false,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "S03",
+      "category": "schedule",
+      "question": "In which slot is CSL3030 offered?",
+      "answer": "CSL3030 is offered in slot B. \nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "CSL3030"
+          }
+        }
+      ],
+      "latency_s": 4.15,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "S04",
+      "category": "schedule",
+      "question": "How many credits is the course Autonomous Systems?",
+      "answer": "The course \"Autonomous Systems\" has 3 credits.\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.18,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "S05",
+      "category": "schedule",
+      "question": "When do the Major exams start this semester?",
+      "answer": "The Major exams start this semester after the midpoint, and the exact date will be provided by the office of Academics.\n\nSource: exams_policy.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "Major exams start this semester"
+          }
+        }
+      ],
+      "latency_s": 4.65,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": null,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "exams_policy.pdf"
+      ],
+      "retrieved_sources": [
+        "academic_regulations.pdf",
+        "exams_policy.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "S06",
+      "category": "schedule",
+      "question": "At what time is the Autonomous Systems class held?",
+      "answer": "The Autonomous Systems class is held on Tuesdays, Thursdays, and Fridays from 11:00-11:50 in slot E.\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_course"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_course",
+          "args": {
+            "course": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 4.04,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "C01",
+      "category": "count",
+      "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses",
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "course_type": "elective",
+            "department": "Humanities",
+            "level": "4"
+          }
+        },
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "How many 400 level electives have been floated by the Humanities department in this semester?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 5.38,
+      "error": "",
+      "refused": true,
+      "correct_refusal": null,
+      "false_refusal": true,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "humanities.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "C02",
+      "category": "count",
+      "question": "How many elective courses are offered by the Computer Science department this semester?",
+      "answer": "There are 5 elective courses offered by the Computer Science department this semester:\n\n  1. CSL7360 Computer Vision | Deepak Mishra | slot I\n  2. CSL7150 Cybersecurity | Susil Kumar Mohanty | slot J\n  3. CSL7350 Selected Topics in AI | Navchetan Awasthi\n  4. CSL7460 Mobile and Pervasive Computing | Suchetana Chakraborty\n  5. CSL7860 Foundation Models and Generative AI | Angshuman Paul\n\nSource: cse.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "CSE",
+            "level": "",
+            "course_type": "elective"
+          }
+        }
+      ],
+      "latency_s": 5.03,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "C03",
+      "category": "count",
+      "question": "How many courses has the Electrical Engineering department floated this semester?",
+      "answer": "There are 33 courses floated by the Electrical Engineering department this semester:\n\n  1. EEL2040 Engineering Electromagnetics | Bharat Singh Rajpurohit | slot E\n  2. EEL2XXX Digital Design | Payal Vyankat Dahiwale | slot A\n  3. EEL2XXX Engineering Optimization | Rajendra Nagar | slot B\n  4. EEL3020 Electrical Machines | Abdul Gafoor Shaik | slot D\n  5. EEL2XXX Statistical Inference and Modeling | Manish Narwaria | slot C\n  6. EEP2XXX Electrical Engineering Lab I | Rajendra Nagar, Kunwar, Bharat Singh Rajpurohit, Payal Vyankat Dahiwale | slot M3, M4, M5\n  7. EEL3060 Power Engineering | Bandi Ravi Kumar | slot E, M7, M10\n  8. EEL3070 Digital Signal Processing | Amit Bhardwaj | slot B\n  9. EEP3030 Electrical Machines Lab | Abdul Gafoor Shaik, Bharat Singh Rajpurohit | slot M1, M7, M9\n 10. EEL3090 Embedded Systems | Bhivraj Suthar, Niladri Sekhar Tripathy | slot C\n 11. EEL3080 Data Communication Networks | ELECTRONICS Dept. | slot D\n 12. EEP3020 Digital Systems Lab | ELECTRONICS Dept. | slot M1, M2\n 13. EEP3010 Communication Systems Lab | ELECTRONICS Dept. | slot M1, M2\n 14. EEL7140 Advanced Control System | Saurav Kumar | slot F\n 15. EEL7300 Computational Methods in Power System Analysis | Vineeth V | slot I\n 16. EEL7700 Electric Drive Systems | Nishant Kumar | slot G\n 17. EEL71720 Power Electronic Converters | Kunwar Aditya | slot H\n 18. EEP7140 Integrated Power and Drives Laboratory | Ravi Yadav | slot L9\n 19. EEL7080 Introduction to CyberPhysical Systems | Niladri Sekhar Tripathy | slot H\n 20. EEL7150 Embedded System Design | Deepak Fulwani | slot G\n 21. EEL7200 Data Communication and Networking | ELECTRONICS Dept. | slot I\n 22. EEL7XXX Optimization Methods for Power System | Vineeth V | slot K\n 23. EEL7XXX Control Techniques in Power Engineering | Kunwar Aditya | slot I\n 24. EEL7XXX Modern Power System Operation and Control | Ravi Yadav | slot I\n 25. EEL7340 Power System Protection | Bandi Ravi Kumar | slot N\n 26. EEL7220 Renewable Energy Systems | Abdul Gafoor Shaik | slot J\n 27. EEL7030 Advanced Digital Signal Processing | Sandeep Yadav | slot J\n 28. RML7220 Mobile Robots | Riby Abraham Boby | slot H\n 29. MEL7080 Robotics | Roshan Kumar Hota | slot G\n 30. RML7310 Networked Dynamical Systems and Control | Anoop Jain | slot K\n 31. EEL7XXX Optimization Techniques for Signal Representation and Processing | Himanshu Kumar | slot N\n 32. EEL1010 Introduction to Electrical Engineering | Deepak Fulwani | slot U, M6 (Tentative)\n 33. EEL7009 Applied Linear Algebra | Vineeth V | slot N\n\nSource: electrical.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "list_courses"
+      ],
+      "tool_calls": [
+        {
+          "name": "list_courses",
+          "args": {
+            "department": "Electrical",
+            "level": "",
+            "course_type": ""
+          }
+        }
+      ],
+      "latency_s": 5.49,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "electrical.csv"
+      ],
+      "retrieved_sources": [
+        "electrical.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "E01",
+      "category": "email",
+      "question": "Write an email to the course instructor of CSL7650 that I need leave for 2 days",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: draft_email.py\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: gaurav.harit@iitj.example\nSubject: Leave application for 2 days - CSL7650 Autonomous Systems (AI+X)\n\nDear Prof. Gaurav Harit,\n\nI am writing to inform you that I will not be able to attend the classes of CSL7650 Autonomous Systems (AI+X) for 2 days due to [reason]. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "course_code": "CSL7650",
+            "dates": "2 days",
+            "request_type": "leave",
+            "reason": ""
+          }
+        }
+      ],
+      "latency_s": 4.32,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "E02",
+      "category": "email",
+      "question": "What is the email ID of the instructor of Autonomous Systems?",
+      "answer": "The email ID of the instructor of Autonomous Systems is gaurav.harit@iitj.example.\n\nSource: cse.csv, faculty_contacts.csv",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "lookup_instructor_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "lookup_instructor_email",
+          "args": {
+            "course_code": "Autonomous Systems"
+          }
+        }
+      ],
+      "latency_s": 5.35,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "E03",
+      "category": "email",
+      "question": "Draft an email to the instructor of CSL3030 requesting a makeup exam because I missed the minor exam due to fever.",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: cse.csv, faculty_contacts.csv\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: susil.kumar.mohanty@iitj.example\nSubject: Request for makeup examination - CSL3030 Operating Systems\n\nDear Prof. Susil Kumar Mohanty,\n\nI could not appear for the examination ([dates]) due to fever. I kindly request you to permit me to take a makeup examination. I will submit the supporting documents (e.g. medical certificate) as required by the institute rules.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "request_type": "makeup",
+            "reason": "fever",
+            "course_code": "CSL3030",
+            "dates": ""
+          }
+        }
+      ],
+      "latency_s": 5.68,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "E04",
+      "category": "email",
+      "question": "I had viral fever for 3 days. Write a sick leave email to the instructor of Data Structures and Algorithms.",
+      "answer": "Draft is ready to review and was NOT sent.\n\nSource: draft_email.py\n\n----- EMAIL DRAFT (DRAFT - not sent) -----\nTo: dip.sankar.banerjee@iitj.example\nSubject: Leave application for 3 days - CSL2120 Data Structures and Algorithms\n\nDear Prof. Dip Sankar Banerjee,\n\nI am writing to inform you that I will not be able to attend the classes of CSL2120 Data Structures and Algorithms for 3 days due to viral fever. I kindly request you to grant me leave for this period. I will make up for the missed content and can share supporting documents if needed.\n\nThank you for your consideration.\n\nRegards,\n[Your Name]\n[Roll Number]\n[Program, Year]\n----------------------------------------",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "draft_email"
+      ],
+      "tool_calls": [
+        {
+          "name": "draft_email",
+          "args": {
+            "dates": "3 days",
+            "course_code": "DSA",
+            "request_type": "leave",
+            "reason": "viral fever"
+          }
+        }
+      ],
+      "latency_s": 5.63,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": [
+        "cse.csv",
+        "faculty_contacts.csv"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "O01",
+      "category": "out_of_scope",
+      "question": "What are the available dining options on the campus?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What are the available dining options on the campus?",
+            "reason": "out of scope"
+          }
+        }
+      ],
+      "latency_s": 4.95,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 3,
+      "id": "O02",
+      "category": "out_of_scope",
+      "question": "What is the best way to reach the campus from Jodhpur city center?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What is the best way to reach the campus from Jodhpur city center?",
+            "reason": "not found in documents"
+          }
+        }
+      ],
+      "latency_s": 5.79,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 3,
+      "id": "O03",
+      "category": "out_of_scope",
+      "question": "What will the weather be like in Jodhpur tomorrow?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What will the weather be like in Jodhpur tomorrow?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 2.5,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 3,
+      "id": "O04",
+      "category": "out_of_scope",
+      "question": "Who won the last cricket world cup?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "Who won the last cricket world cup?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 1.78,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 3,
+      "id": "O05",
+      "category": "out_of_scope",
+      "question": "Which laptop should I buy for programming?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "Which laptop should I buy for programming?",
+            "reason": "refused by the agent (logged by the program)"
+          }
+        }
+      ],
+      "latency_s": 1.75,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 3,
+      "id": "O06",
+      "category": "out_of_scope",
+      "question": "What is the timing of the campus gym?",
+      "answer": "I don't know the answer to this based on the available academic documents.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "log_unanswered_question"
+      ],
+      "tool_calls": [
+        {
+          "name": "log_unanswered_question",
+          "args": {
+            "question": "What is the timing of the campus gym?",
+            "reason": "not found in documents"
+          }
+        }
+      ],
+      "latency_s": 4.54,
+      "error": "",
+      "refused": true,
+      "correct_refusal": true,
+      "false_refusal": null,
+      "auto_correct": null,
+      "has_citation": null,
+      "citation_valid": null,
+      "citation_correct": null,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [],
+      "retrieved_sources": []
+    },
+    {
+      "run": 3,
+      "id": "D01",
+      "category": "curriculum",
+      "question": "Which specializations are offered in the B.Tech. AI & DS program?",
+      "answer": "The specializations offered in the B.Tech. AI & DS program are:\n\n1. Visual Computing\n2. Socio-digital realities\n3. Robotics\n4. AIOT\n5. Management specialization with AI and Technology focus (leading to MBA (BTech + MBA dual degree program))\n\nSource: AI&DS curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. AI & DS specializations"
+          }
+        }
+      ],
+      "latency_s": 7.24,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "AI&DS curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "AI&DS curriculum.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D02",
+      "category": "curriculum",
+      "question": "How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?",
+      "answer": "There are 30 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.\n\nSource: B.Tech. in Bioengineering Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Bioengineering Programme Elective credits"
+          }
+        }
+      ],
+      "latency_s": 4.82,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "B.Tech. in Bioengineering Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "B.Tech. in Bioengineering Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D03",
+      "category": "curriculum",
+      "question": "What is the grand total of credits in the BS in Physics with Specialization program?",
+      "answer": "Source: BS in Physics with Specialization Curriculum.pdf\n\nThe grand total of credits in the BS in Physics with Specialization program is not explicitly mentioned in the provided document.",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grand total credits BS in Physics with Specialization program"
+          }
+        }
+      ],
+      "latency_s": 6.18,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "BS in Physics with Specialization Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "BS in Physics with Specialization Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D04",
+      "category": "curriculum",
+      "question": "What is the total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program?",
+      "answer": "The total number of credits in the M.Tech. Cyber-Physical Systems (CPS) program is 56.\n\nSource: Curriculum MTech CPS.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "credits M.Tech. Cyber-Physical Systems (CPS) program"
+          }
+        }
+      ],
+      "latency_s": 6.44,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum MTech CPS.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum MTech CPS.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D05",
+      "category": "curriculum",
+      "question": "How many credits is the B.Tech. Project SS499 in the B.Tech. Systems Science curriculum?",
+      "answer": "The B.Tech. Project SS499 in the B.Tech. Systems Science curriculum is worth 22 credits.\n\nSource: Curriculum for B.Tech. Programs.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Project SS499 credits B.Tech. Systems Science curriculum"
+          }
+        }
+      ],
+      "latency_s": 6.17,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ],
+      "retrieved_sources": [
+        "Curriculum for B.Tech. Programs.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D06",
+      "category": "curriculum",
+      "question": "How many Programme Core credits does the B.Tech. Electronics Engineering curriculum have?",
+      "answer": "The B.Tech. Electronics Engineering curriculum has 90 Programme Core credits. \n\nSource: EE curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "B.Tech. Electronics Engineering Programme Core credits"
+          }
+        }
+      ],
+      "latency_s": 4.39,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "EE curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "EE curriculum.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D07",
+      "category": "curriculum",
+      "question": "What is the total number of credits in the Integrated Teacher Education Program (ITEP)?",
+      "answer": "The total number of credits in the Integrated Teacher Education Program (ITEP) is 176. \n\nSource: Integrated Teacher Education Program (ITEP) Curriculum.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "ITEP total credits"
+          }
+        }
+      ],
+      "latency_s": 5.3,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": true,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+      ],
+      "retrieved_sources": [
+        "Integrated Teacher Education Program (ITEP) Curriculum.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D08",
+      "category": "curriculum",
+      "question": "What is the total credit requirement of the M.Sc. Mathematics program?",
+      "answer": "The total credit requirement of the M.Sc. Mathematics program is 38. \n\nSource: M.Sc. Mathematics course booklet.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "M.Sc. Mathematics program credit requirement"
+          }
+        }
+      ],
+      "latency_s": 5.23,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "M.Sc. Mathematics course booklet.pdf"
+      ],
+      "retrieved_sources": [
+        "M.Sc. Mathematics course booklet.pdf",
+        "academic_regulations.pdf"
+      ]
+    },
+    {
+      "run": 3,
+      "id": "D09",
+      "category": "curriculum",
+      "question": "What is the grand total of credits in the M.Tech. Data and Computational Sciences program?",
+      "answer": "The grand total of credits in the M.Tech. Data and Computational Sciences program is 90. \n\nSource: MTech Structure.pdf",
+      "agent": "academic_helpdesk",
+      "tools": [
+        "search_documents"
+      ],
+      "tool_calls": [
+        {
+          "name": "search_documents",
+          "args": {
+            "query": "grand total credits M.Tech. Data and Computational Sciences program"
+          }
+        }
+      ],
+      "latency_s": 5.19,
+      "error": "",
+      "refused": false,
+      "correct_refusal": null,
+      "false_refusal": false,
+      "auto_correct": false,
+      "has_citation": true,
+      "citation_valid": true,
+      "citation_correct": true,
+      "tool_ok": true,
+      "route_ok": false,
+      "cited": [
+        "MTech Structure.pdf"
+      ],
+      "retrieved_sources": [
+        "MTech Structure.pdf"
+      ]
+    }
+  ],
+  "changed": [
+    {
+      "id": "P05",
+      "question": "What is the procedure to apply for a makeup examination?",
+      "verdict_changed": false,
+      "min_similarity": 0.16,
+      "answers": [
+        "The procedure to apply for a makeup examination is as follows: a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. Alternatively, the student can consult with the Dean of Academics, who may permit the student to appear for a make-up examination any day before the end of the first week of the next semester.\n\nSource: academic_regulations.pdf",
+        "To apply for a makeup examination, a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. The student should make an application to the Dean (Academics) through the course instructor within ten days from the date of the examination missed, explaining the reasons for their absence.\n\nSource: academic_regulations.pdf",
+        "The procedure to apply for a makeup examination is as follows: a student needs to produce a Medical Certificate issued by the Medical Officer of the Institute if they are residing in the Hostels, or obtain written permission from the Medical Officer if they are taking medical consultation with outside Doctors. Alternatively, a student can consult with the Dean of Academics, who may permit the student to appear for a make-up examination any day before the end of the first week of the next semester.\n\nSource: academic_regulations.pdf"
+      ]
+    },
+    {
+      "id": "P06",
+      "question": "How many grade points does an A grade carry?",
+      "verdict_changed": false,
+      "min_similarity": 0.7,
+      "answers": [
+        "The grade point for an A grade is 10. \n\nSource: academic_regulations.pdf",
+        "An A grade carries 10 grade points.\n\nSource: academic_regulations.pdf",
+        "An A grade carries 10 grade points.\n\nSource: academic_regulations.pdf"
+      ]
+    },
+    {
+      "id": "P09",
+      "question": "Can a B.Tech. student register for a 700 level (PG) course?",
+      "verdict_changed": false,
+      "min_similarity": 0.78,
+      "answers": [
+        "A B.Tech. student cannot register for a 700 level (PG) course.",
+        "A B.Tech. student cannot register for a 700 level (PG) course. \n\nSource: EE curriculum.pdf",
+        "A B.Tech. student cannot register for a 700 level (PG) course. \n\nSource: academic_regulations.pdf"
+      ]
+    },
+    {
+      "id": "S05",
+      "question": "When do the Major exams start this semester?",
+      "verdict_changed": false,
+      "min_similarity": 0.65,
+      "answers": [
+        "The Major exams for this semester will start at the end of the semester.\n\nSource: exams_policy.pdf",
+        "The Major exams start this semester after the midpoint, and the exact date will be provided by the office of Academics.\n\nSource: exams_policy.pdf",
+        "The Major exams start this semester after the midpoint, and the exact date will be provided by the office of Academics.\n\nSource: exams_policy.pdf"
+      ]
+    },
+    {
+      "id": "D02",
+      "question": "How many Programme Elective (PE) credits are there in the B.Tech. Bioengineering curriculum?",
+      "verdict_changed": true,
+      "min_similarity": 0.99,
+      "answers": [
+        "There are 18 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.\n\nSource: B.Tech. in Bioengineering Curriculum.pdf",
+        "There are 30 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.\n\nSource: B.Tech. in Bioengineering Curriculum.pdf",
+        "There are 30 Programme Elective (PE) credits in the B.Tech. Bioengineering curriculum.\n\nSource: B.Tech. in Bioengineering Curriculum.pdf"
+      ]
+    },
+    {
+      "id": "D03",
+      "question": "What is the grand total of credits in the BS in Physics with Specialization program?",
+      "verdict_changed": false,
+      "min_similarity": 0.59,
+      "answers": [
+        "The grand total of credits in the BS in Physics with Specialization program is 29. \n\nSource: BS in Physics with Specialization Curriculum.pdf",
+        "The grand total of credits in the BS in Physics with Specialization program is 69. \n\nSource: BS in Physics with Specialization Curriculum.pdf",
+        "Source: BS in Physics with Specialization Curriculum.pdf\n\nThe grand total of credits in the BS in Physics with Specialization program is not explicitly mentioned in the provided document."
+      ]
+    },
+    {
+      "id": "D08",
+      "question": "What is the total credit requirement of the M.Sc. Mathematics program?",
+      "verdict_changed": false,
+      "min_similarity": 0.39,
+      "answers": [
+        "The total credit requirement of the M.Sc. Mathematics program is not explicitly mentioned in the search results. However, the course booklet mentions that the program is designed to maintain a balance between theoretical analysis and practical applications of mathematics, and that the core courses establish a solid foundation in fundamental mathematical concepts while enhancing the analytical capabilities of students. \n\nSource: M.Sc. Mathematics course booklet.pdf",
+        "The total credit requirement of the M.Sc. Mathematics program is 38. \n\nSource: M.Sc. Mathematics course booklet.pdf",
+        "The total credit requirement of the M.Sc. Mathematics program is 38. \n\nSource: M.Sc. Mathematics course booklet.pdf"
+      ]
+    }
+  ]
+}
