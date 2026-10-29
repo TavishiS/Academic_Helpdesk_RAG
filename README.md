@@ -108,7 +108,14 @@ AS_assignment/
 │   ├── knowledge_base/      ← your documents: cse/electrical/mechanical/civil.csv, slot_system.csv,
 │   │                          faculty_contacts.csv (generated) + rules and curriculum PDFs
 │   └── sample/              tiny DUMMY files for a smoke test
-├── report/report_template.md
+├── report/
+│   ├── report.pdf           the 4-page report (built from report.md)
+│   ├── report.md            its source
+│   ├── report_full.md       the long version with every table and the full error analysis
+│   ├── analyze_results.py   recomputes every number of the report from results/
+│   ├── results_tables.md    its output (generated)
+│   ├── build_pdf.py         report.md -> report.pdf (needs `pip install markdown` and Chrome)
+│   └── report_template.md   the blank template the report follows
 ├── logs/                    unanswered_questions.csv
 ├── results/                 evaluation outputs
 └── chroma_db/               created by ingest
@@ -328,12 +335,6 @@ Each run writes `results/<model>_<mode>_<timestamp>/`:
 | Citation / groundedness | answer cites ≥1 KB file **and** every cited file was actually returned by a tool; *correct source* = cited file ∈ `expected_sources` |
 | Correct tool / routing | `expected_tool` called / `expected_agent` received the question (multi only) |
 | Stability | per question across runs: did the verdict change (refused ↔ answered, correct ↔ wrong) or did the text similarity drop below 0.8? |
-
-The default temperature is 0.2, so some run-to-run variation is expected and worth discussing. Use `TEMPERATURE=0`
-to compare against near-deterministic runs.
-
-Copy the numbers into `report/report_template.md` to write the report.
-
 ---
 
 ## 7. Configuration
@@ -352,34 +353,4 @@ Defaults are in `config.py`. Change them in `.env`, or for a single run with an 
 | `MAX_PASSAGE_CHARS` | `700` | max characters of one passage sent to the LLM |
 | `MIN_SIMILARITY` | `0.50` | relevance cut-off (cosine) |
 
-Example: `TOP_K=6 MIN_SIMILARITY=0.45 make chat multi_agent`.
-`MIN_SIMILARITY` is the main knob for the refusal trade-off. Too high and the agent refuses valid questions; too low
-and it gets weak chunks that invite guessing. Run `python main.py ask "..." --trace` on a few questions and check the
-`similarity` values the tool returns to tune it for your documents.
-`make smoke-test` also prints the similarity of a relevant query next to that of an off-topic query, which is a good
-first indication of where the cut-off should be.
-
 ---
-
-## 8. Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| Not sure what is wrong | `make doctor` |
-| `Vector store not found` | run `make ingest` |
-| `No virtual environment found` | run `make venv` |
-| Connection refused to localhost:11434 | start Ollama (`ollama serve`) |
-| Model prints a JSON tool call as text instead of calling it | make sure the model string uses `ollama_chat/` (done in `agents.py`); use a model with tool support (llama3.1, qwen3) |
-| Answers ignore the retrieved text / instructions | context window too small: keep `NUM_CTX=8192`, or set `OLLAMA_CONTEXT_LENGTH=8192` before `ollama serve` |
-| Lookup tools say "course not found" | check the CSV headers (section 4); then re-run so the tables are re-read |
-| Slow on CPU | normal for an 8B model; the multi-agent mode makes at least 2 LLM calls per question |
-| A PDF produced 0 chunks | it is scanned; OCR it or convert it to TXT |
-
----
-
-## 9. Limitations / possible improvements
-- Dense-only retrieval. A hybrid BM25 + dense search, or a cross-encoder re-ranker, would help with exact terms.
-- Tables inside PDFs lose their structure when extracted.
-- An 8B model sometimes routes wrongly or skips the citation. The eval script measures how often.
-- `list_courses` infers the level from the first digit of the course number. This matches codes like `HSL4010`
-  but would need changing for other numbering schemes.
